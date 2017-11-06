@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   def create_client
     user = self
-    Client.create! user: user
+    Client.create(user: user)
   end
 
 end
