@@ -11,4 +11,14 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  after_create :create_client
+
+  private
+
+  def create_client
+    user = self
+    Client.create! user: user
+  end
+
 end
