@@ -6,6 +6,7 @@ class CreateAuthors < ActiveRecord::Migration[5.0]
       t.string :description
       t.string :currency
       t.date :birthday
+      t.boolean :active, default: true
 
       t.timestamps
     end

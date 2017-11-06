@@ -9,6 +9,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.string :publisher
       t.date :publication_year
       t.references :author, foreign_key: true
+      t.boolean :active, default: true
 
       t.timestamps
     end
