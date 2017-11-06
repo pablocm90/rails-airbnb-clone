@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 ruby '2.3.5'
 
 gem 'faker' #temporary, to generate random book objects
+gem "bootstrap-sass"
+gem "font-awesome-sass"
+gem "simple_form"
+gem "autoprefixer-rails"
+
 
 gem 'devise'
 gem 'figaro'
