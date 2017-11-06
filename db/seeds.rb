@@ -16,18 +16,18 @@ p "defining clients"
 
 p "one client should be an author"
 
-@user_author = @users.first
-
 p "the pic and devise are random strings"
 
 picture = "randomstring"
 devise = "euros"
 
+@user_author = Author.create(user: @users.first, profile_picture: picture, currency: devise)
+
 p "let's generate some random books by that author"
 
 10.times do
   params = {}
-  params[:title] = Faker::Dune.sayings
+  params[:title] = Faker::Dune.saying
   params[:price] = rand(1..20)
   params[:genre] = Faker::Lorem.word
   params[:cover_pic] = "anotherrandomstring"
