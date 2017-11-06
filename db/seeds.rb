@@ -1,3 +1,5 @@
-p "defining user"
+p "defining users"
 
-@user = User.first
+@users = User.all
+
+puts @clients
