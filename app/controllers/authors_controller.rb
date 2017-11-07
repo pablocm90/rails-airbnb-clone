@@ -33,7 +33,7 @@ class AuthorsController < ApplicationController
   end
 
   def author_params
-    params.require(:author).permit(:profile_picture, :description, :currency, :birthday, :active)
+    params.require(:author).permit(:profile_picture, :profile_picture_cache, :description, :currency, :birthday, :active)
   end
 
 
