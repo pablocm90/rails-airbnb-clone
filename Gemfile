@@ -3,7 +3,9 @@ ruby '2.3.5'
 
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master' #temporary, to generate random book objects
 
-
+gem 'figaro'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 gem 'devise'
 gem 'figaro'
