@@ -12,5 +12,14 @@ Rails.application.routes.draw do
   resources :authors, except: [ :new, :create ] do
     resources :books, except: [ :index ]
   end
+
+  resources :books, only: [] do
+    collection do
+      get 'search', to: 'books#search'
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+
