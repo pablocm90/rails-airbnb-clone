@@ -6,7 +6,6 @@ p "erasing author, transactions and books"
   Book.destroy_all
   Author.destroy_all
 
-
 p "defining users"
 
 @users = User.all

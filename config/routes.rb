@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'dashboard', to: 'authors#dashboard'
 
-  resources :authors, only: [ :new, :create ]
+  resource :authors, only: [ :new, :create ]
 
   resource :clients , except: [ :new, :create, :index ]
 
