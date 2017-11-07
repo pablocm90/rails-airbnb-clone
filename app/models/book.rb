@@ -1,5 +1,4 @@
 class Book < ApplicationRecord
-  include PgSearch
   def author_username
     author_username = book.author.user.username
   end
