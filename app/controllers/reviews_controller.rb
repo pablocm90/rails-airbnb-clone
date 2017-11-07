@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @review.book = @book
     @review.user = @user
     if @review.save!
-      redirect_to authors_book_path(@book)
+      redirect_to book_path(@book)
     else
       render :new
     end
