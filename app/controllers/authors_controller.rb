@@ -10,7 +10,7 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
     @author.user = current_user
     if @author.save
-      current_user.author = true
+      current_user.is_author = true
       redirect_to dashboard_path
     else
       raise
@@ -29,7 +29,7 @@ class AuthorsController < ApplicationController
   private
 
   def set_author
-    @author = @current_author
+    @author = current_author
   end
 
   def author_params
