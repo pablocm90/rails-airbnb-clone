@@ -1,5 +1,25 @@
 
 <h1>client info here</h1>
-<h1><%= @client.name  %></h1>
+<h1><%= @user.username  %></h1>
+<h2><%= @user.email %></h2>
+<h2><%= @client.profile_picture %></h2>
+<h2><%= @client.description %></h2>
+<h2><%= @client.prefered_genre %></h2>
+<h2><%= @client.currency %></h2>
+<h2><%= @client.birthday %></h2>
+
+<%= simple_form_for @client do |f| %>
+
+  <%= f.input :profile_picture, placeholder: @client.profile_picture %>
+  <%= f.input :description, placeholder: @client.description, type: :text%>
+  <%= f.input :prefered_genre, placeholder: @client.prefered_genre %>
+  <%= f.input :currency, placeholder: @client.currency %>
+  <%= f.input :birthday, placeholder: @client.birthday %>
+
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'edit basic information', edit_user_registration_path(@user) %>
+
 
 

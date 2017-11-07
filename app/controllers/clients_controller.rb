@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
 
   before_action :set_client, except: [:update]
+  before_action :set_user, except: [:update]
 
   def show
   end
@@ -17,8 +18,17 @@ class ClientsController < ApplicationController
   private
 
   def set_client
-    @client = Client.find(client.user = current_user)
+    @client = Client.find(user = current_user)
   end
+
+  def set_user
+    @user = current_user
+  end
+
+  def client_params
+
+  end
+
 
 
 
