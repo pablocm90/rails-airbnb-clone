@@ -3,7 +3,22 @@
 
     <h1>CHAPTER</h1>
     <p>Discover the world, one book at a time</p>
-    <a class="btn btn-danger btn-lg">Buy a book now</a>
+
+    <!-- <div class = form>
+     <input type="text" class="form-control" placeholder="Hello... Is it me you're looking for?">
+    </div> -->
+
+    <!-- <div class="search-form">
+      <form action="/books" method="get">
+        <input type="text" name="book_type" placeholder="Search for books">
+        <input type="submit">
+      </form>
+    </div> -->
+
+    <%= form_tag(movies_path, method: :get) do %>
+      <%= text_field_tag :query %>
+      <%= submit_tag 'Search' %>
+    <% end %>
 
   </div>
 </div>
