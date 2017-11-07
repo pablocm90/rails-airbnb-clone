@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-  before_action :set_author, only: [ :create ]
+  before_action :set_author, only: [ :dashboard ]
 
 
   def new
@@ -10,12 +10,18 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
     @author.user = current_user
     if @author.save
-      redirect_to root_path
+      current_user.author = true
+      redirect_to dashboard_path
     else
       raise
       render :new
     end
   end
+
+  def dashboard
+
+  end
+
 
 
 
