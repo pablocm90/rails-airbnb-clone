@@ -1,0 +1,11 @@
+<%= simple_form_for @author do |f| %>
+<%= f.input :profile_picture, placeholder: @author.profile_picture %>
+<%= f.input :description, placeholder: @author.description, as: :text %>
+<%= f.input :currency, placeholder: @author.currency %>
+<%= f.input :birthday, placeholder: @author.birthday, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12,
+                              order: [:day, :month, :year] %>
+
+<%= f.button :submit %>
+
+<% end %>

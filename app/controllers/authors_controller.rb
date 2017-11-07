@@ -8,9 +8,11 @@ class AuthorsController < ApplicationController
 
   def create
     @author = Author.new(author_params)
+    @author.user = current_user
     if @author.save
-      redirect_to authors_path
+      redirect_to root_path
     else
+      raise
       render :new
     end
   end
@@ -25,7 +27,7 @@ class AuthorsController < ApplicationController
   end
 
   def author_params
-    params.require(:author).permit(:user_id, :profile_picture, :description, :currency, :birthday, :active)
+    params.require(:author).permit(:profile_picture, :description, :currency, :birthday, :active)
   end
 
 
