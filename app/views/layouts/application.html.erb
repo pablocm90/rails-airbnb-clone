@@ -10,15 +10,18 @@
 </head>
 <body>
 
+<%= render 'shared/navbar' %>
 
-  <%= render 'shared/navbar' %>
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
-  <%= render 'shared/banner' %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+ <p class="notice text-center"><%= notice %></p>
 
 
-
- <%= render 'shared/cards' %>
  <%= yield %>
  <%= render 'shared/footer' %>
  <%= javascript_include_tag 'application' %>
