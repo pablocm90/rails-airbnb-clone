@@ -8,7 +8,7 @@
         <div class="card-category"><%= book.genre %></div>
         <div class="card-description">
           <h2><%= book.title %></h2>
-          <p><%= book.author %></p>
+          <p><%= book.author.user.username %></p>
         </div>
         <div class="card-price">
           <p><%= book.price %>€</p>
