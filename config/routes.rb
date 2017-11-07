@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :book_transactions, only: [ :new, :create ]
   end
 
-  resources :clients , except: [ :new, :create ] do
+  resources :clients , except: [ :new, :create, :index ] do
     resources :book_transactions, only: [ :create, :new, :update ]
   end
   resources :authors, except: [ :new, :create ] do
