@@ -2,9 +2,10 @@ require 'faker'
 
 p "erasing author, transactions and books"
 
-  Author.destroy_all
-  Book.destroy_all
   BookTransaction.destroy_all
+  Book.destroy_all
+  Author.destroy_all
+
 
 p "defining users"
 
