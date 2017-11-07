@@ -2,10 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.5'
 
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master' #temporary, to generate random book objects
-gem "bootstrap-sass"
-gem "font-awesome-sass"
-gem "simple_form"
-gem "autoprefixer-rails"
+
 
 
 gem 'devise'

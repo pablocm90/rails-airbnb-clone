@@ -1,11 +1,4 @@
-<h1>Search for books</h1>
-
-<%= form_tag(search_books_path, method: :get) do %>
-  <%= text_field_tag :query %>
-  <%= submit_tag 'Search' %>
-<% end %>
-
-<h1>Browse our books</h1>
+<h1>Your search results</h1>
 
 <% @books.each do |book|  %>
   <p><%= book.title %></p>
