@@ -11,7 +11,8 @@
 
     <!-- Profile picture with dropdown list -->
     <% if current_user %>
-    <a href="#" class="navbar-book-item navbar-book-link">Become an author</a>
+    <!-- <a href="#" class="navbar-book-item navbar-book-link">Become an author</a> -->
+    <%= link_to "Become an author", new_authors_path, class: 'navbar-book-item navbar-book-link' %>
 
     <div class="navbar-book-item">
       <div class="dropdown">
