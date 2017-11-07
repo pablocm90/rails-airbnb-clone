@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :authors, only: [ :new, :create ]
+  resource :authors, only: [ :new, :create ]
 
   resource :clients , except: [ :new, :create, :index ]
 
