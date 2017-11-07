@@ -29,4 +29,22 @@
 <h3>Synopsys  </h3>
 <p><%= @book.synopsys %></p>
 
+<h3>Reviews</h3>
+<ul>
+  <% @book.reviews.each do |review| %>
+    <li>
+      <p><%= review.rating %></p>
+      <p><%= review.content %></p>
+    </li>
+  <% end %>
+</ul>
+
+<h4> Add a Review </h4>
+
+<%= simple_form_for [@book, @review] do |f| %>
+  <%= f.input :rating  %>
+  <%= f.input :content %>
+  <%= f.submit "Add this review", class: "btn btn-primary" %>
+<% end %>
+
 <h2><%= link_to "Back to search results", :back %></h2>
