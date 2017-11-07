@@ -1,10 +1,13 @@
 
 <div class="container">
   <div class="row">
+
     <% @books.each do |book| %>
+    <% images = ["img-1.jpg", "img-2.jpeg", "img-3.jpeg", "img-4.jpeg", "img-5.jpg", "img-6.jpeg"] %>
+
 
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/12064/pexels-photo-12064.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('assets/<%= images.sample %>');">
         <div class="card-category"><%= book.genre %></div>
         <div class="card-description">
           <h2><%= book.title %></h2>
@@ -14,10 +17,8 @@
           <p><%= book.price %>€</p>
         </div>
         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
-        <a class="card-link" href="#" ></a>
+        <%= link_to "", book_path(book), class: 'card-link' %>
       </div>
-
-
     </div>
     <% end %>
   </div>
