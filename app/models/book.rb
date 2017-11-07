@@ -1,13 +1,7 @@
 class Book < ApplicationRecord
-  include PgSearch
   def author_username
     author_username = book.author.user.username
   end
-
-  # pg_search_scope :global_search,
-  #   against: [ :title, :genre, :synopsys ],
-  #   associated_against: {
-  #     author: [ :author_username ]
 
 
 def self.search(search)

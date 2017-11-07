@@ -10,8 +10,12 @@ class BooksController < ApplicationController
   end
 
   def search
-    @books = Book.search(params[:query])
-    @books = @books.sort_by { |hash| hash['publication_year'] }.reverse
+    if params[:query].present?
+      @books = Book.search(params[:query])
+      @books = @books.sort_by { |hash| hash['publication_year'] }.reverse
+    else
+      @books = Book.all
+    end
   end
 
   def show
