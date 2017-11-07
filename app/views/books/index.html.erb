@@ -12,7 +12,7 @@
           <p><%= book.author.user.username %></p>
           <p><%= book.genre %></p>
           <p><%= book.publication_year %></p>
-          <%= link_to "More details", book_path(book), class: "btn btn-danger" %>
+          <%= link_to "More details", root_path(@book), class: "btn btn-danger" %>
         </div>
       <% end %>
     </div>
