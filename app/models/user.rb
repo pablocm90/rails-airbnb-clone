@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :book_transactions
+  has_many :reviews
   has_one :client
   has_one :author
   has_many :books, through: :book_transactions
