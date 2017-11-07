@@ -19,6 +19,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @search = params[:query]
     @book = Book.find(params[:id])
   end
 end

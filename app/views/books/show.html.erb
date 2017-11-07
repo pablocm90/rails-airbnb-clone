@@ -1,0 +1,32 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/163176/home-laptop-tablet-lifestyle-163176.jpeg');">
+  <div class="banner-content">
+
+    <h1><%= @book.title %></h1>
+    <h3><%= @book.author.user.username %></h3>
+    <p>Price: <%= @book.price%> €</p>
+    <%= link_to "Buy now", '#', class: "btn btn-danger" %>
+  </div>
+</div>
+
+
+<h3>First chapter</h3>
+<p> Blablablablablablabla. So good. Blablablablablabla. </p>
+
+<h3>Chapters</h3>
+  <ul>
+    <li>Chapter 1: </li>
+    <li>Chapter 2: </li>
+    <li>Chapter 3: </li>
+    <li>Chapter 4: </li>
+    <li>Chapter 5: </li>
+    <li>Chapter 6: </li>
+  </ul>
+
+<h3>Author</h3>
+<p><%= @book.author.user.username %></p>
+<p><%= @book.author.description %></p>
+
+<h3>Synopsys  </h3>
+<p><%= @book.synopsys %></p>
+
+<h2><%= link_to "Back to search results", :back %></h2>
