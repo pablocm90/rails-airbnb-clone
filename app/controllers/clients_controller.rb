@@ -1,5 +1,7 @@
 class ClientsController < ApplicationController
 
+  before_action :set_client, except: [:update]
+
   def show
   end
 
