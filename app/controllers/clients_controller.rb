@@ -10,13 +10,14 @@ class ClientsController < ApplicationController
   end
 
   def update
-    @client.profile_picture = client_params[:profile_picture]
-    @client.description = client_params[:description]
-    @client.prefered_genre = client_params[:prefered_genre]
-    @client.currency = client_params[:currency]
-    @client.birthday = client_params[:birthday]
+    @client.update(client_params)
+    # @client.profile_picture = client_params[:profile_picture]
+    # @client.description = client_params[:description]
+    # @client.prefered_genre = client_params[:prefered_genre]
+    # @client.currency = client_params[:currency]
+    # @client.birthday = client_params[:birthday]
     if @client.save
-      redirect_to client_path(@client)
+      redirect_to clients_path
     else
       render 'show'
     end
@@ -28,7 +29,7 @@ class ClientsController < ApplicationController
   private
 
   def set_client
-    @client = Client.find(user = current_user)
+    @client = current_client
   end
 
   def set_user
