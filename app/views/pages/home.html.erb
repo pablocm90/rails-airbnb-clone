@@ -1,11 +1,3 @@
 <%= render 'shared/banner' %>
 
-
-<h1>Search for books</h1>
-
-<%= form_tag(search_books_path, method: :get) do %>
-  <%= text_field_tag :query %>
-  <%= submit_tag 'Search' %>
-<% end %>
-
 <%= render 'shared/cards' %>
