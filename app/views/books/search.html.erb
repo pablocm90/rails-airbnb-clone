@@ -1,0 +1,10 @@
+<h1>Your search results</h1>
+
+<% @books.each do |book|  %>
+  <p><%= book.title %></p>
+  <p><%= book.author.user.username %></p>
+  <p><%= book.genre %></p>
+  <p><%= book.synopsys %></p>
+  <p><%= book.publication_year %></p>
+  <%= link_to "More details", author_book_path(book.author, book), class: "btn btn-danger" %>
+<% end %>

@@ -1,4 +1,25 @@
 class Book < ApplicationRecord
+  include PgSearch
+  def author_username
+    author_username = book.author.user.username
+  end
+
+  # pg_search_scope :global_search,
+  #   against: [ :title, :genre, :synopsys ],
+  #   associated_against: {
+  #     author: [ :author_username ]
+
+
+def self.search(search)
+  books_title = where("title LIKE ?", "%#{search}%")
+  books_genre = where("genre LIKE ?", "%#{search}%")
+  books_synopsys = where("synopsys LIKE ?", "%#{search}%")
+   # where("author_username LIKE ?", "%#{search}%")
+  books_result = books_title + books_genre + books_synopsys
+  return books_result
+end
+
+
   belongs_to :author
   validates :price, numericality: true
   validates :title, presence: true
