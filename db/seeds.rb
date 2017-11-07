@@ -3,8 +3,8 @@ require 'faker'
 p "erasing author, transactions and books"
 
   Author.destroy_all
-  BookTransaction.destroy_all
   Book.destroy_all
+  BookTransaction.destroy_all
 
 p "defining users"
 
@@ -27,7 +27,7 @@ p "let's generate some random books by that author"
 
 10.times do
   params = {}
-  params[:title] = Faker::Dune.saying
+  params[:title] = Faker::Lorem.word
   params[:price] = rand(1..20)
   params[:genre] = Faker::Lorem.word
   params[:cover_pic] = "anotherrandomstring"
