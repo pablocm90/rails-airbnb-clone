@@ -21,5 +21,6 @@ class BooksController < ApplicationController
   def show
     @search = params[:query]
     @book = Book.find(params[:id])
+    @review = Review.new
   end
 end
