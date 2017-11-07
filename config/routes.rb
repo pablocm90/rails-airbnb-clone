@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   resource :clients , except: [ :new, :create, :index ]
 
   resource :authors, except: [ :new, :create ] do
-    resources :books, except: [ :index ]
+    resources :books, except: [ :show ]
   end
 
-  resources :books, only: [] do
+  resources :books, only: [ :show ] do
     resources :book_transactions, only: [ :create, :new, :update ]
     collection do
       get 'search', to: 'books#search'
