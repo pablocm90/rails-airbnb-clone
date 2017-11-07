@@ -3,18 +3,20 @@
 
 <h1>Browse our books</h1>
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
-    <% @books.each do |book|  %>
+    <@books.each do |book|  %>
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card">
-          <p><%= book.title %></p>
-          <p><%= book.author.user.username %></p>
-          <p><%= book.genre %></p>
-          <p><%= book.publication_year %></p>
-          <%= link_to "More details", root_path(@book), class: "btn btn-danger" %>
+          <p>< book.title %></p>
+          <p>< book.author.user.username %></p>
+          <p><book.genre %></p>
+          <p>< book.publication_year %></p>
+          < link_to "More details", root_path(@book), class: "btn btn-danger" %>
         </div>
-      <% end %>
+      < end %>
     </div>
   </div>
-</div>
+</div> -->
+
+ <%= render 'shared/cards' %>
