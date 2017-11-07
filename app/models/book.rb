@@ -3,11 +3,6 @@ class Book < ApplicationRecord
     author_username = book.author.user.username
   end
 
-  # pg_search_scope :global_search,
-  #   against: [ :title, :genre, :synopsys ],
-  #   associated_against: {
-  #     author: [ :author_username ]
-
 
 def self.search(search)
   books_title = where("title LIKE ?", "%#{search}%")
