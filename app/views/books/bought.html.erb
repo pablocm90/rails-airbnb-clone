@@ -1,1 +1,10 @@
-bought.html.erb
+<h2>Payment Was Succesfull !</h2>
+
+<h3> Book: <%= @book.title %></h3>
+<h4> Amount: <%= @book.price %> €</h3>
+
+<%= link_to "Download your book", '#', class: "btn btn-danger"%>
+
+<h2><%= link_to "Back to Overview", root_path(@book) %></h2>
+
+

@@ -5,14 +5,16 @@
 <h3> Billing Information </h3>
 
 <ul>
-    <li>First Name: <%= @user.username %></li>
-    <li>Last Name: Van Roeyen</li>
-    <li>Card Number: 6703 4509 6788 4560 4</li>
-    <li>Experience date: 07/2021</li>
-    <li>Card Code: ***</li>
-    <li><%= link_to "Add another Account", '#' %></li>
+  <li>First Name: <%= @user.username %></li>
+  <li>Last Name: Van Roeyen</li>
+  <li>Card Number: 6703 4509 6788 4560 4</li>
+  <li>Experience date: 07/2021</li>
+  <li>Card Code: ***</li>
 </ul>
+<%= link_to "Add another Card", '#', class: "btn btn-primary"%>
 
-<h2><%= link_to "Back to Order", :back %></h2>
+<%= link_to "Confirm payment", bought_book_path(@book), class: "btn btn-danger"%>
+
+<h2><%= link_to "Back to Order", buy_book_path(@book) %></h2>
 
 
