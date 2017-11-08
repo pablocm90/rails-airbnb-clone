@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     collection do
       get 'search', to: 'books#search'
     end
+    member do
+      get "buy", to: "books#buy"
+      get "pay", to: "books#pay"
+      get "bought", to: "books#bought"
+    end
     resources :reviews, only: [:new, :create, :index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

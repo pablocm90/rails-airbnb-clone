@@ -17,16 +17,12 @@
 }
 
 #footer a {
-  color: #CCCCCC ;
+  color: white;
   font-size: 30px;
   letter-spacing: 20px;
   transition: color 0.5s ease;
 }
 
 #footer a:hover {
-  color: #D23333;
-}
-
-#footer .fa-heart {
-  color: #D23333;
+  color: $red-accent;
 }

@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [ :show, :edit, :search ]
-  skip_before_action :authenticate_user!, only: [:index, :search_by_author, :search_by_title, :search_by_genre, :show]
+
+  before_action :set_book, only: [ :show, :edit ]
+  skip_before_action :authenticate_user!, only: [:index, :show, :search]
 
   def index
     @authors = Author.all
@@ -50,6 +51,22 @@ class BooksController < ApplicationController
     else
       render :new
     end
+    
+  def buy
+    @book = Book.find(params[:id])
+    @author = @book.author
+  end
+
+  def pay
+    @book = Book.find(params[:id])
+    @user = current_user
+    @client = current_client
+    @author = @book.author
+  end
+
+  def bought
+    @book = Book.find(params[:id])
+    @user = current_user
   end
 
   private
@@ -62,10 +79,9 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+
   def book_params
     params.require(:book).permit(:price, :title, :synopsys, :genre, :cover_pic, :cover_pic_cache, :publisher, :publication_year)
   end
-
-
 
 end
