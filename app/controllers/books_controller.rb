@@ -51,7 +51,8 @@ class BooksController < ApplicationController
     else
       render :new
     end
-    
+  end
+
   def buy
     @book = Book.find(params[:id])
     @author = @book.author
