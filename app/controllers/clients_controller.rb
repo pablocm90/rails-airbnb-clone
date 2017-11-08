@@ -4,6 +4,7 @@ class ClientsController < ApplicationController
   before_action :set_user
 
   def show
+
   end
 
   def edit

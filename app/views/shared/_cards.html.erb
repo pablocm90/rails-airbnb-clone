@@ -8,10 +8,10 @@
 
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('assets/<%= images.sample %>');">
-        <div class="card-category"><%= book.genre %></div>
+        <div class="card-category"> title: <%= book.title %></div>
         <div class="card-description">
-          <h2><%= book.title %></h2>
-          <p><%= book.author.user.username %></p>
+          <h2> author: <%= book.author.user.username %></h2>
+          <p>genre: <%= book.genre %></p>
         </div>
         <div class="card-price">
           <p><%= book.price %>€</p>
