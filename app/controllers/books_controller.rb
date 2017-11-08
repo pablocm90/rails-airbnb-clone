@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [ :show ]
-  skip_before_action :authenticate_user!, only: [:index, :search_by_author, :search_by_title, :search_by_genre, :show]
+  skip_before_action :authenticate_user!, only: [:index, :search, :show]
 
   def index
     @authors = Author.all
