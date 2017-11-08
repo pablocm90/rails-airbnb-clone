@@ -73,7 +73,8 @@ class BooksController < ApplicationController
   private
 
   def sort_results(data)
-    @books = data.sort_by { |hash| hash['publication_year'] }.reverse
+    @books = data
+    # data.sort_by { |hash| hash['publication_year'] }.reverse
   end
 
   def set_book
