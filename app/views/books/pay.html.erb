@@ -4,18 +4,14 @@
 
 <h3> Billing Information </h3>
 
-<%= simple_form_for @client, url: clients_path do |f| %>
-
-  <%= f.input :profile_picture, placeholder: @client.profile_picture %>
-  <%= f.input :description, placeholder: @client.description, as: :text%>
-  <%= f.input :prefered_genre, placeholder: @client.prefered_genre %>
-  <%= f.input :currency, placeholder: @client.currency %>
-  <%= f.input :birthday, placeholder: @client.birthday, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12,
-                              order: [:day, :month, :year] %>
-
-  <%= f.button :submit %>
-<% end %>
+<ul>
+    <li>First Name: <%= @user.username %></li>
+    <li>Last Name: Van Roeyen</li>
+    <li>Card Number: 6703 4509 6788 4560 4</li>
+    <li>Experience date: 07/2021</li>
+    <li>Card Code: ***</li>
+    <li><%= link_to "Add another Account", '#' %></li>
+</ul>
 
 <h2><%= link_to "Back to Order", :back %></h2>
 

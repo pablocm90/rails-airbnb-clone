@@ -31,8 +31,8 @@ class BooksController < ApplicationController
 
   def pay
     @book = Book.find(params[:id])
+    @user = current_user
     @client = current_client
     @author = @book.author
-
   end
 end
