@@ -16,6 +16,9 @@
   justify-content:center;
 }
 
+
+
+
 // .card-big:hover {
 
 //     transform: scale(1);
@@ -24,10 +27,11 @@
 
   .showpage-title {
     position: absolute;
-    top: 40px;
-    font-size: 15px;
+    top: 30px;
+    font-size: 35px;
     color: #999999;
-
+    text-align: center;
+    width: 100%;
   }
 
   .showpage-author{
@@ -35,6 +39,8 @@
     top: 60px;
     font-size: 15px;
     color: #999999;
+    width: 100%;
+    text-align: center;
 
   }
 
@@ -70,4 +76,5 @@ width:350px;
   top: 150px;
   font-size:15px;
   color:#999999;
+  text-align:justify;
 }
