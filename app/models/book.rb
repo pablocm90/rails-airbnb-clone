@@ -21,8 +21,7 @@ def self.search(search)
   books_title = where("title LIKE ?", "%#{search}%")
   books_genre = where("genre LIKE ?", "%#{search}%")
   books_synopsys = where("synopsys LIKE ?", "%#{search}%")
-  books_author = where("author.user.username LIKE ?", "%#{search}%")
-  books_result = books_title + books_genre + books_synopsys + books_author
+  books_result = books_title + books_genre + books_synopsys
   return books_result
 end
 
