@@ -1,10 +1,26 @@
-<div class="container"><h1>Your search results</h1>
-<% @books.each do |book|  %>
-  <p><%= book.title %></p>
-  <p><%= book.author.user.username %></p>
-  <p><%= book.genre %></p>
-  <p><%= book.synopsys %></p>
-  <p><%= book.publication_year %></p>
-  <%= link_to "More details", book_path(book), class: "btn btn-danger" %>
-<% end %>
+<h1>Your search results</h1>
+<div class="container">
+  <div class="row">
+
+    <% @books.each do |book| %>
+
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path book.cover_pic %>');">
+        <div class="card-category"> title: <%= book.title %></div>
+        <div class="card-description">
+          <h2> author: <%= book.author.user.username %></h2>
+          <p>genre: <%= book.genre %></p>
+        </div>
+        <div class="card-price">
+          <p><%= book.price %>€</p>
+        </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
+        <a class="card-link" href="#"></a>
+        <%= link_to "", book_path(book), class: 'card-link' %>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
