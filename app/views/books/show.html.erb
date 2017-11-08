@@ -20,7 +20,7 @@
 
         <div class="showpage-synopsys">
 
-          <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatem, debitis. Culpa amet minima ducimus dicta qui, expedita! Eius cupiditate, quidem a? Incidunt velit, numquam aut vel, pariatur adiusto doloremque voluptas distinctio amet eligendi, neque sint placeat natus eius id ducimus dolores veniam et quas iste. Illum, nobis
+          <p>  <%= @book.synopsys %>
 
           </p>
         </div>
@@ -31,7 +31,7 @@
           <% if current_author %>
           <%= link_to "Edit book", edit_authors_book_path, class: 'btn btn-danger' %>
           <% else %>
-          <%= link_to "Buy now", new_book_book_transaction_path(@book), class: 'btn btn-danger' %>
+          <%= link_to "Buy now", buy_book_path(@book), class: 'btn btn-danger' %>
           <% end %> %>
         </div>
       </div>
