@@ -23,7 +23,7 @@ url = "https://vignette.wikia.nocookie.net/dbxfanon/images/8/83/Yoshi_Happy_YBA.
 devise = "euros"
 
 @user_author = Author.new(user: @users.first, currency: devise)
-@user_author.remote_photo_url = url
+@user_author.remote_profile_picture_url = url
 @user_author.save
 
 p "let's generate some random books by that author"
@@ -39,8 +39,8 @@ p "let's generate some random books by that author"
   params[:synopsys] = Faker::Lovecraft.paragraph(2)
   book = Book.new(params)
 
-  cover_pic = "https://images.pexels.com/photos/279470/pexels-photo-279470.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"
-  book.cover_pic_url = cover_pic
+  nurl = "https://images.pexels.com/photos/279470/pexels-photo-279470.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"
+  book.remote_cover_pic_url = nurl
   book.save
 end
 
