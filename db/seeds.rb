@@ -18,10 +18,12 @@ p "one client should be an author"
 
 p "the pic and devise are random strings"
 
-picture = "randomstring"
+url = "https://vignette.wikia.nocookie.net/dbxfanon/images/8/83/Yoshi_Happy_YBA.png/revision/latest/scale-to-width-down/220?cb=20160320065000"
 devise = "euros"
 
-@user_author = Author.create(user: @users.first, profile_picture: picture, currency: devise)
+@user_author = Author.new(user: @users.first, currency: devise)
+@user_author.remote_photo_url = url
+@user_author.save
 
 p "let's generate some random books by that author"
 
@@ -30,11 +32,15 @@ p "let's generate some random books by that author"
   params[:title] = Faker::Lorem.word
   params[:price] = rand(1..20)
   params[:genre] = Faker::Lorem.word
-  params[:cover_pic] = "anotherrandomstring"
+
   params[:publisher] = Faker::Lovecraft.deity
   params[:author] = @user_author
   params[:synopsys] = Faker::Lovecraft.paragraph(2)
-  Book.create(params)
+  book = Book.new(params)
+
+  cover_pic = "https://images.pexels.com/photos/279470/pexels-photo-279470.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"
+  book.cover_pic_url = cover_pic
+  book.save
 end
 
 p "a couple of book transactions to make everything cool"
@@ -46,4 +52,5 @@ p "a couple of book transactions to make everything cool"
 end
 
 p "all should be here"
+
 
