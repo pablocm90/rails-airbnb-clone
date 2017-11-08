@@ -17,7 +17,7 @@ class BooksController < ApplicationController
   def search
     if params[:query].present?
       @books = Book.search(params[:query])
-      sort_results(books)
+      sort_results(@books)
     else
       @books = Book.all
     end
