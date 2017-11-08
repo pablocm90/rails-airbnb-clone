@@ -17,7 +17,7 @@
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: white;
   opacity: 0.6;
   margin-bottom: 30px;
 }
@@ -32,7 +32,16 @@
   margin-right: 2px;
 }
 
-.home-btn {
+.search-btn {
   vertical-align: inherit;
   border-radius: 4px;
+  background: $red-accent;
+  border-color: $red-accent;
+  color: white;
+  font-weight: lighter;
 }
+
+.search-btn:hover {
+  color: white;
+}
+
