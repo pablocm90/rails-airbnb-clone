@@ -1,34 +1,80 @@
 .card-big {
-  height: 380px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 450px;
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   transform: scale(0.9);
   transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
-.card-big:hover {
+.card-big p {
+  padding:20px;
+  justify-content:center;
+}
 
-    transform: scale(1);
 
-  }
+
+
+// .card-big:hover {
+
+//     transform: scale(1);
+
+//   }
 
   .showpage-title {
     position: absolute;
-    top: 10px;
-    left: 50%;
+    top: 30px;
+    font-size: 35px;
+    color: #999999;
+    text-align: center;
+    width: 100%;
+  }
+
+  .showpage-author{
+    position: absolute;
+    top: 60px;
     font-size: 15px;
-    text-transform: uppercase;
+    color: #999999;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .showpage-author-description{
+    position: absolute;
+    top: 150px;
+    font-size: 15px;
+    color: #999999;
+
   }
 
 .showpage-user {
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 40px;
+    width: 70px;
     border-radius: 50%;
+    background-size: cover;
+}
+
+.showpage-button {
+  position:absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.col-sm-4 {
+width:350px;
+}
+
+.showpage-synopsys{
+  position:absolute;
+  top: 150px;
+  font-size:15px;
+  color:#999999;
+  text-align:justify;
 }
