@@ -44,7 +44,7 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book = Book.new(book_params)
+    @book = Book.update(book_params)
     @book.author = current_author
     if @book.save
       redirect_to book_path(@book)
