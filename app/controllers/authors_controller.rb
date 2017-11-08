@@ -18,6 +18,10 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+  end
+
   def dashboard
 
   end

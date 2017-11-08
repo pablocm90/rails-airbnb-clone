@@ -12,14 +12,30 @@
     <!-- Profile picture with dropdown list -->
     <% if current_user %>
     <!-- <a href="#" class="navbar-book-item navbar-book-link">Become an author</a> -->
-    <%= link_to "Become an author", new_authors_path, class: 'navbar-book-item navbar-book-link' %>
+    <% if current_user.author %>
+      <%= link_to "Add a book", new_authors_book_path, class: 'navbar-book-item navbar-book-link' %>
+    <% else %>
+      <%= link_to "Become an author", new_authors_path, class: 'navbar-book-item navbar-book-link' %>
+    <% end %>
 
     <div class="navbar-book-item">
       <div class="dropdown">
+        <% if current_user.author %>
+
         <img src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen" class="avatar dropdown-toggle" id="navbar-book-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-book-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
+
+        <% else %>
+
+        <img src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen" class="avatar dropdown-toggle" id="navbar-book-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-book-dropdown-menu">
+          <li><a href='/clients'>Profile</a></li>
+          <li><a href="#">Dashboard</a></li>
+
+        <% end %>
+
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
