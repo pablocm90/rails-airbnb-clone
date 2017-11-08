@@ -1,50 +1,21 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/163176/home-laptop-tablet-lifestyle-163176.jpeg');">
-  <div class="banner-content">
+   <div class="flex-container">
 
-    <h1><%= @book.title %></h1>
-    <h3><%= @book.author.user.username %></h3>
-    <p>Price: <%= @book.price%> €</p>
-    <%= link_to "Buy now", '#', class: "btn btn-danger" %>
-  </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('../assets/img-1.jpg');">
+        <div class="showpage-title"><%= @book.title %></div>
+        <img class="showpage-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('../assets/img-1.jpg');">
+        <div class="showpage-title"><%= @book.title %></div>
+        <img class="showpage-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
+      </div>
+    </div>
+
 </div>
 
 
-<h3>First chapter</h3>
-<p> Blablablablablablabla. So good. Blablablablablabla. </p>
 
-<h3>Chapters</h3>
-  <ul>
-    <li>Chapter 1: </li>
-    <li>Chapter 2: </li>
-    <li>Chapter 3: </li>
-    <li>Chapter 4: </li>
-    <li>Chapter 5: </li>
-    <li>Chapter 6: </li>
-  </ul>
 
-<h3>Author</h3>
-<p><%= @book.author.user.username %></p>
-<p><%= @book.author.description %></p>
-
-<h3>Synopsys  </h3>
-<p><%= @book.synopsys %></p>
-
-<h3>Reviews</h3>
-<ul>
-  <% @book.reviews.each do |review| %>
-    <li>
-      <p><%= review.rating %></p>
-      <p><%= review.content %></p>
-    </li>
-  <% end %>
-</ul>
-
-<h4> Add a Review </h4>
-
-<%= simple_form_for [@book, @review] do |f| %>
-  <%= f.input :rating  %>
-  <%= f.input :content %>
-  <%= f.submit "Add this review", class: "btn btn-primary" %>
-<% end %>
-
-<h2><%= link_to "Back to search results", :back %></h2>
