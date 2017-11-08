@@ -12,7 +12,7 @@
 }
 
 .card-big p {
-  padding:20px;
+  padding:5px 20px ;
   justify-content:center;
 }
 
@@ -27,11 +27,14 @@
 
   .showpage-title {
     position: absolute;
-    top: 30px;
+    top: 20px;
     font-size: 35px;
     color: #999999;
     text-align: center;
     width: 100%;
+    font-family: 'Special Elite', cursive;
+    text-transform: capitalize;
+
   }
 
   .showpage-author{
@@ -46,7 +49,7 @@
 
   .showpage-author-description{
     position: absolute;
-    top: 150px;
+    top: 120px;
     font-size: 15px;
     color: #999999;
 
@@ -64,16 +67,17 @@
 .showpage-button {
   position:absolute;
   bottom: 10px;
-  width: 100%;
+  width:100%;
+
 }
 
 .col-sm-4 {
 width:350px;
 }
 
-.showpage-synopsys{
+.showpage-synopsis{
   position:absolute;
-  top: 150px;
+  top: 130px;
   font-size:15px;
   color:#999999;
   text-align:justify;
