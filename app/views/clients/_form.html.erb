@@ -2,6 +2,7 @@
 <%= simple_form_for @client, url: clients_path do |f| %>
 
   <%= f.input :profile_picture, placeholder: @client.profile_picture %>
+  <%= f.input :profile_picture_cache, as: :hidden %>
   <%= f.input :description, placeholder: @client.description, as: :text%>
   <%= f.input :prefered_genre, placeholder: @client.prefered_genre %>
   <%= f.input :currency, placeholder: @client.currency %>
