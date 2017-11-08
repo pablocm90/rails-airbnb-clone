@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [ :show ]
+
+  before_action :set_book, only: [ :show, :edit ]
   skip_before_action :authenticate_user!, only: [:index, :show, :search]
 
   def index
@@ -38,6 +39,19 @@ class BooksController < ApplicationController
     end
   end
 
+  def edit
+    @author = current_author
+  end
+
+  def update
+    @book = Book.new(book_params)
+    @book.author = current_author
+    if @book.save
+      redirect_to book_path(@book)
+    else
+      render :new
+    end
+    
   def buy
     @book = Book.find(params[:id])
     @author = @book.author
