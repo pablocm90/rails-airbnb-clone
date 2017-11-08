@@ -1,5 +1,4 @@
-<h1>Your search results</h1>
-
+<div class="container"><h1>Your search results</h1>
 <% @books.each do |book|  %>
   <p><%= book.title %></p>
   <p><%= book.author.user.username %></p>
@@ -8,3 +7,4 @@
   <p><%= book.publication_year %></p>
   <%= link_to "More details", book_path(book), class: "btn btn-danger" %>
 <% end %>
+</div>
