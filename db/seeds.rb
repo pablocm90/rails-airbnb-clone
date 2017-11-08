@@ -3,6 +3,7 @@ require 'faker'
 p "erasing author, transactions and books"
 
   BookTransaction.destroy_all
+  Review.destroy_all
   Book.destroy_all
   Author.destroy_all
 
