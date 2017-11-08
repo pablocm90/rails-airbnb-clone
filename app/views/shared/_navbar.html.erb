@@ -12,7 +12,7 @@
     <!-- Profile picture with dropdown list -->
     <% if current_user %>
     <!-- <a href="#" class="navbar-book-item navbar-book-link">Become an author</a> -->
-    <% if current_user.author %>
+    <% if current_author %>
       <%= link_to "Add a book", new_authors_book_path, class: 'navbar-book-item navbar-book-link' %>
     <% else %>
       <%= link_to "Become an author", new_authors_path, class: 'navbar-book-item navbar-book-link' %>
@@ -20,12 +20,12 @@
 
     <div class="navbar-book-item">
       <div class="dropdown">
-        <% if current_user.author %>
+        <% if current_author %>
 
         <img src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen" class="avatar dropdown-toggle" id="navbar-book-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-book-dropdown-menu">
           <li><a href="/clients">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
 
         <% else %>
 
