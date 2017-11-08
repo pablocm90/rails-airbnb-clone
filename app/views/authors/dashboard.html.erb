@@ -1,3 +1,5 @@
 <h1>here is the dashboard</h1>
 
-<p><%= current_user.username %></p>
+<p><%= @author.user.username %></p>
+
+<%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>

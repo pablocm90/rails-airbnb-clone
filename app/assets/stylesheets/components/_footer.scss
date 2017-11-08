@@ -1,6 +1,11 @@
 #footer {
   background: $footer-gray;
   color: rgba(0,0,0,0.3);
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  text-align: center;
+  height: 70px;
 }
 
 #footer p {
