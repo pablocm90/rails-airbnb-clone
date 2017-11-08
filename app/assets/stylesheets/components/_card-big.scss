@@ -1,0 +1,34 @@
+.card-big {
+  height: 380px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.card-big:hover {
+
+    transform: scale(1);
+
+  }
+
+  .showpage-title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+.showpage-user {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    border-radius: 50%;
+}
