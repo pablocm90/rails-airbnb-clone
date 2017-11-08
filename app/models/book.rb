@@ -1,4 +1,17 @@
 class Book < ApplicationRecord
+  mount_uploader :cover_pic, PhotoUploader
+
+  belongs_to :author
+  has_many :reviews
+
+  validates :price, numericality: true
+  validates :title, presence: true
+  validates :genre, presence: true
+  validates :cover_pic, presence: true
+  validates :publisher, presence: true
+  validates :author, presence: true
+  validates :synopsys, presence: true, length: { minimum: 60, maximum: 500 }
+
   def author_username
     author_username = book.author.user.username
   end
@@ -13,15 +26,5 @@ def self.search(search)
   return books_result
 end
 
-
-  belongs_to :author
-  has_many :reviews
-  validates :price, numericality: true
-  validates :title, presence: true
-  validates :genre, presence: true
-  validates :cover_pic, presence: true
-  validates :publisher, presence: true
-  validates :author, presence: true
-  validates :synopsys, presence: true, length: { minimum: 60, maximum: 500 }
 
 end
