@@ -1,0 +1,22 @@
+<h2>Payment Summary</h2>
+
+<h3>Amount: <%= @book.price %> €</h3>
+
+<h3> Billing Information </h3>
+
+<%= simple_form_for @client, url: clients_path do |f| %>
+
+  <%= f.input :profile_picture, placeholder: @client.profile_picture %>
+  <%= f.input :description, placeholder: @client.description, as: :text%>
+  <%= f.input :prefered_genre, placeholder: @client.prefered_genre %>
+  <%= f.input :currency, placeholder: @client.currency %>
+  <%= f.input :birthday, placeholder: @client.birthday, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12,
+                              order: [:day, :month, :year] %>
+
+  <%= f.button :submit %>
+<% end %>
+
+<h2><%= link_to "Back to Order", :back %></h2>
+
+

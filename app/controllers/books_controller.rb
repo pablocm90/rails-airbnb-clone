@@ -23,4 +23,16 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @review = Review.new
   end
+
+  def buy
+    @book = Book.find(params[:id])
+    @author = @book.author
+  end
+
+  def pay
+    @book = Book.find(params[:id])
+    @client = current_client
+    @author = @book.author
+
+  end
 end
