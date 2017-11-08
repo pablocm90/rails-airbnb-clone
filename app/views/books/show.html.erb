@@ -1,20 +1,42 @@
    <div class="flex-container">
 
     <div class="col-xs-12 col-sm-4">
-      <div class="card-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('../assets/img-1.jpg');">
-        <div class="showpage-title"><%= @book.title %></div>
+      <div class="card-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('../assets/book-cover.jpg');">
+
         <img class="showpage-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-4">
-      <div class="card-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('../assets/img-1.jpg');">
-        <div class="showpage-title"><%= @book.title %></div>
-        <img class="showpage-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
+      <div class="card-big" style="background: white;">
+        <div class="showpage-title">Title: <%= @book.title %></div>
+        <div class="showpage-author">
+          <p><%= @book.author.user.username %></p>
+        </div>
+
+        <div class="showpage-author-description">
+          <p><%= @book.author.description %></p>
+        </div>
+
+        <div class="showpage-synopsys">
+
+          <p><%= @book.synopsys %></p>
+        </div>
+
+
+
+        <div class="edit-book text-center showpage-button">
+          <% if current_author %>
+          <%= link_to "Edit book", edit_authors_book_path, class: 'btn btn-danger' %>
+          <% else %>
+          <%= link_to "Buy now", new_book_book_transaction_path(@book), class: 'btn btn-danger' %>
+          <% end %> %>
+        </div>
       </div>
+
     </div>
 
-</div>
+  </div>
 
 
 
