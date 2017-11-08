@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [ :show ]
+  before_action :set_book, only: [ :show, :edit ]
   skip_before_action :authenticate_user!, only: [:index, :search_by_author, :search_by_title, :search_by_genre, :show]
 
   def index
@@ -29,6 +29,20 @@ class BooksController < ApplicationController
   end
 
   def create
+    @book = Book.new(book_params)
+    @book.author = current_author
+    if @book.save
+      redirect_to book_path(@book)
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @author = current_author
+  end
+
+  def update
     @book = Book.new(book_params)
     @book.author = current_author
     if @book.save
