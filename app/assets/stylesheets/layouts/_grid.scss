@@ -1,0 +1,34 @@
+.dashboard {
+  height: 500px;
+  display: grid;
+  grid-template-column: 33%, auto;
+  grid-template-row: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin: 10px 0;
+
+  .grid-profile {
+    grid-row: 1 / span 2;
+  }
+  .grid-sales {
+
+  }
+  .grid-prices {
+
+  }
+  .grid-reviews {
+
+  }
+  .grid-books {
+    grid-column: 2 / span 3;
+    grid-row: 2;
+
+  }
+  .grid {
+    border: solid 1px black;
+    &:hover {
+      border: solid 3px red;
+    }
+
+  }
+}
