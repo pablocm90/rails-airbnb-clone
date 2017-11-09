@@ -5,9 +5,10 @@ Rails.application.routes.draw do
 
   resource :authors, only: [ :new, :create ]
 
+  resources :authors, only: :show
   resource :clients , except: [ :new, :create, :index ]
 
-  resource :authors, except: [ :new, :create ] do
+  resource :authors, except: [ :new, :create, :show ] do
     resources :books, except: [ :show ]
   end
 

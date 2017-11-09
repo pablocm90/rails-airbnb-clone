@@ -11,6 +11,7 @@ class AuthorsController < ApplicationController
     @author.user = current_user
     if @author.save
       current_user.is_author = true
+      current_user.save
       redirect_to dashboard_path
     else
       render :new
@@ -18,7 +19,7 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @author = Author.find(params[:id])
   end
 
   def dashboard
@@ -35,9 +36,14 @@ class AuthorsController < ApplicationController
     @author = current_author
   end
 
-  def author_params
-    params.require(:author).permit(:profile_picture, :profile_picture_cache, :description, :currency, :birthday, :active)
+  def set_book
+    @book = Book.find(params[:book_id])
   end
+
+  def author_params
+    params.require(:author).permit(:profile_picture, :profile_picture_cache, :description, :currency, :birthday, :active, :book)
+  end
+
 
 
 end
