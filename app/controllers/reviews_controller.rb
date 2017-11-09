@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @book = set_book
     @reviews = Review.all
