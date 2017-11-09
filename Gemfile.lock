@@ -69,6 +69,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    chartkick (2.2.5)
     cloudinary (1.8.1)
       aws_cf_signer
       rest-client
@@ -236,6 +237,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
   carrierwave (~> 0.11.2)
+  chartkick
   cloudinary
   devise
   faker!

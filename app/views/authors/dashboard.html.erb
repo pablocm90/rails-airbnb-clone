@@ -1,4 +1,19 @@
-<h1><%= @author.user.username %> - Dashboard</h1>
 
-<%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>
-
+<% content_for(:after_js) do %>
+<div class="container">
+  <h1><%= @author.user.username %> - Dashboard</h1>
+  <div class="dashboard">
+    <div class="grid grid-profile">
+      <%= render 'author_avatar' %>
+      <h2> <%= @author.user.username %> </h2>
+      <div class="chart"><%= pie_chart @author.books.group(:genre).count %>
+      </div>
+    </div>
+    <div class="grid grid-books"></div>
+    <div class="grid grid-prices"></div>
+    <div class="grid grid-reviews"></div>
+    <div class="grid grid-sales"></div>
+  </div>
+  <%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>
+</div>
+<% end %>
