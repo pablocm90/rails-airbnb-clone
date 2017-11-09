@@ -1,8 +1,8 @@
 .dashboard {
   height: 500px;
   display: grid;
-  grid-template-column: 33%, auto;
-  grid-template-row: auto;
+  grid-template-column: 33% 1fr 1fr 1fr;
+  grid-template-row: 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   margin: 10px 0;
@@ -34,6 +34,16 @@
       border: solid 3px red;
     }
   }
+  hr {
+    border: solid 1px red;
+  }
+}
+
+
+#chart-1{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
 }
 
 .avatar-big {

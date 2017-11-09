@@ -4,6 +4,7 @@ class Book < ApplicationRecord
   belongs_to :author
   has_many :reviews
 
+
   validates :price, numericality: true
   validates :title, presence: true
   validates :genre, presence: true
