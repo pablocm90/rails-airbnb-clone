@@ -1,13 +1,14 @@
-   <div class="flex-container">
+<div class="container margin-top-80">
+  <div class="row">
 
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-6">
       <div class="card-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @book.cover_pic %>');">
 
         <img class="showpage-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-6">
       <div class="card-big" style="background: white;">
         <div class="showpage-title"><%= @book.title %></div>
         <div class="showpage-author">
@@ -16,10 +17,8 @@
 
         <div class="showpage-synopsis">
           <p>Synopsis:</p>
-          <p><%= @book.synopsys%></p>
+          <p><%= @book.synopsys %></p>
         </div>
-
-
 
         <div class="edit-book text-center showpage-button">
           <% if current_author == @book.author %>
@@ -29,10 +28,10 @@
           <% end %>
         </div>
       </div>
-
     </div>
 
   </div>
+</div>
 
 
 
