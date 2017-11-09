@@ -9,6 +9,10 @@
 
   .grid-profile {
     grid-row: 1 / span 2;
+    text-align: center;
+    .avatar-big {
+      margin-top: 40px
+    }
   }
   .grid-sales {
 
