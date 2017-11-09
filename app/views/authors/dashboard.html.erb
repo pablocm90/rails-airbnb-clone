@@ -1,14 +1,13 @@
 
 <% content_for(:after_js) do %>
 <div class="container">
-  <h1><%= @author.user.username %> - Dashboard</h1>
   <div class="dashboard">
     <div class="grid grid-profile">
       <%= render 'author_avatar' %>
-      <h2> <%= @author.user.username %> </h2>
-      <hr>
-      <p>Book genres breakdown</p>
-      <div class="chart"><%= pie_chart @author.books.group(:genre).count, width: "200px", height: "200px", donut: true, labels: false, legend: false %>
+      <h2 id="grid-title"> <%= @author.user.username %> </h2>
+
+      <p><strong>Book genres breakdown</strong></p>
+      <div class="chart"><%= pie_chart @author.books.group(:genre).count, width: "200px", height: "200px", donut: true, legend: false %>
       </div>
     </div>
     <div class="grid grid-books">
@@ -16,12 +15,12 @@
     </div>
     <div class="grid grid-prices">
       <div id="author-average">
-        <p>Your average price</p>
-        <p><%= @author.books.average(:price) %></p>
+        <p><strong>Your average price</strong></p>
+        <p><%= @author.books.average(:price).round(2) %></p>
       </div>
       <div id="all-average">
-        <p>Overall average price</p>
-        <p><%= Book.all.average(:price) %></p>
+        <p><strong>Overall average price</strong></p>
+        <p><%= Book.all.average(:price).round(2) %></p>
       </div>
     </div>
     <div class="grid grid-reviews">
@@ -29,12 +28,12 @@
     </div>
 
       <div class="grid grid-sales">
-        <p>Sales breakdown</p>
-        <%= pie_chart @author.book_transactions.group(:title).count, width: "200px", height: "200px", donut: true, labels: false, legend: false %>
+        <p><strong>Books sold</strong></p>
+        <%= pie_chart @author.book_transactions.group(:title).count, width: "150px", height: "150px", legend: false %>
       </div>
     </div>
-    <%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>
   </div>
   <% end %>
+
 
 
