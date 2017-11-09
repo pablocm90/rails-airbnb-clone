@@ -3,4 +3,5 @@ class Author < ApplicationRecord
   belongs_to :user
   has_many :books
   validates :currency, presence: true
+
 end

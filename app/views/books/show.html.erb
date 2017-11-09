@@ -10,10 +10,10 @@
 
     <div class="col-xs-12 col-sm-6">
       <div class="card-big" style="background: white;">
-        <p class="showpage-title"><%= @book.title %></p>
-        <p class="showpage-author">
-          <%= @book.author.user.username %>
-        </p>
+        <div class="showpage-title"><%= @book.title %></div>
+        <div class="showpage-author">
+          <p><%= @book.author_name %></p>
+        </div>
 
         <div class="showpage-synopsis">
           <p>Synopsis:</p>
