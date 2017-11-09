@@ -12,10 +12,10 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="<%= cl_image_path @review.book %>" alt="">
+            <img src="<%= cl_image_path @author.reviews.first.book %>" alt="">
             <div class="carousel-caption">
-              <%= @reviews.first.rating %>
-              <%= @reviews.first.content %>
+              <%= @author.reviews.first.rating %>
+              <%= @author.reviews.first.content %>
             </div>
           </div>
           <div class="item">
