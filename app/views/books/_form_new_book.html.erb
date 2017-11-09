@@ -1,12 +1,13 @@
-<%= simple_form_for @book, url: authors_books_path do |f| %>
-<%= f.input :title %>
-<%= f.input :synopsys, as: :text %>
-<%= f.input :genre %>
-<%= f.input :cover_pic %>
-<%= f.input :publisher %>
-<%= f.input :publication_year, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year,
-                              order: [:year] %>
-<%= f.input :price %>
-<%= f.button :submit, data: {confirm: "Do you want to create this book?"} %>
-<% end %>
+        <%= simple_form_for @book, url: authors_books_path do |f| %>
+        <%= f.input :title %>
+        <%= f.input :synopsys, as: :text %>
+        <%= f.input :genre %>
+        <%= f.input :cover_pic %>
+        <%= f.input :publisher %>
+        <%= f.input :publication_year, as: :date, start_year: Date.today.year - 90,
+        end_year: Date.today.year,
+        order: [:year] %>
+        <%= f.input :price %>
+        <%= f.button :submit, data: {confirm: "Do you want to create this book?"}, class:"btn btn-danger" %>
+        <% end %>
+

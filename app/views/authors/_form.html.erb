@@ -4,10 +4,8 @@
 <%= f.input :description, placeholder: @author.description, as: :text %>
 <%= f.input :currency, placeholder: @author.currency %>
 <%= f.input :birthday, placeholder: @author.birthday, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12,
-                              order: [:day, :month, :year] %>
-
+end_year: Date.today.year - 12,
+order: [:day, :month, :year] %>
 <%= f.button :submit, class:"btn btn-danger" %>
-
 <% end %>
 
