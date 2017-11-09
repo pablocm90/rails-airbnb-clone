@@ -1,8 +1,8 @@
 .dashboard {
   height: 500px;
   display: grid;
-  grid-template-column: 33%, auto;
-  grid-template-row: auto;
+  grid-template-columns: 33% 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   margin: 10px 0;
@@ -18,9 +18,17 @@
 
   }
   .grid-prices {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    div {
+      text-align: center;
+    }
 
   }
   .grid-reviews {
+
 
   }
   .grid-books {
@@ -34,6 +42,20 @@
       border: solid 3px red;
     }
   }
+  hr {
+    border: solid 1px red;
+  }
+}
+
+
+#chart-1{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+#chart-2 {
+  margin: auto;
 }
 
 .avatar-big {

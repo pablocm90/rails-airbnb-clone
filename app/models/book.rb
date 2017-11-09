@@ -3,6 +3,8 @@ class Book < ApplicationRecord
 
   belongs_to :author
   has_many :reviews
+  has_many :book_transactions
+
 
   validates :price, numericality: true
   validates :title, presence: true
