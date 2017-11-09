@@ -5,29 +5,26 @@
   color: white;
   position: relative;
   border-radius: 2px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  transform: scale(0.9);
-  transition: all 0.3s ease;
   font-family: 'Roboto', sans-serif;
+  max-width: 400px;
+  margin-top:30px;
+  margin-bottom:20px;
+  margin-right:0;
 }
 
 .card-big p {
   padding:5px 20px ;
   justify-content:center;
+  margin: 0;
+
 }
 
-
-
-
-// .card-big:hover {
-
-//     transform: scale(1);
-
-//   }
+.col-xs-12 {
+  min-width:auto;
+}
 
   .showpage-title {
-    position: absolute;
-    top: 20px;
+    position: relative;
     font-size: 35px;
     color: #999999;
     text-align: center;
@@ -38,8 +35,7 @@
   }
 
   .showpage-author{
-    position: absolute;
-    top: 60px;
+    position: relative;
     font-size: 15px;
     color: #999999;
     width: 100%;
@@ -47,9 +43,12 @@
 
   }
 
+  .showpage-author {
+    margin:0;
+  }
+
   .showpage-author-description{
-    position: absolute;
-    top: 120px;
+    position: relative;
     font-size: 15px;
     color: #999999;
 
@@ -68,13 +67,12 @@
   position:absolute;
   bottom: 10px;
   width:100%;
-
 }
 
 
 .showpage-synopsis{
-  position:absolute;
-  top: 130px;
+  position:relative;
+  padding-top: 30px;
   font-size:15px;
   color:#999999;
   text-align:justify;
