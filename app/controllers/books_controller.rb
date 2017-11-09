@@ -11,8 +11,18 @@ class BooksController < ApplicationController
   end
 
   def show
-    @review = Review.new
     @author = @book.author
+    reviews = Review.where(book_id: @book.id)
+    unless reviews = []
+      sum = 0
+      i = 0
+      reviews.each do |review|
+        rating = review.rating
+        sum += rating
+        i += 1
+      end
+      @average_rating = sum / i
+    end
   end
 
   def search
