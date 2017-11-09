@@ -1,8 +1,8 @@
 .dashboard {
   height: 500px;
   display: grid;
-  grid-template-column: 33% 1fr 1fr 1fr;
-  grid-template-row: 1fr 1fr;
+  grid-template-columns: 33% 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   margin: 10px 0;
@@ -18,9 +18,17 @@
 
   }
   .grid-prices {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    div {
+      text-align: center;
+    }
 
   }
   .grid-reviews {
+
 
   }
   .grid-books {

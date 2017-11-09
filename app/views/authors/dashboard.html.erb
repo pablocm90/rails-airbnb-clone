@@ -13,16 +13,26 @@
     </div>
     <div class="grid grid-books"></div>
     <div class="grid grid-prices">
-      <p>Your average book price is: <%= @author.books.average(:price) %> Euros</p>
-      <p>The average book price overall is: <%= Book.all.average(:price) %> Euros</p>
+      <div id="author-average">
+        <p>Your average price</p>
+        <p><%= @author.books.average(:price) %></p>
+      </div>
+      <div id="all-average">
+        <p>Overall average price</p>
+        <p><%= Book.all.average(:price) %></p>
+      </div>
     </div>
-    <div class="grid grid-reviews"></div>
+    <div class="grid grid-reviews">
+      <%= render 'carousel_reviews' %>
+    </div>
 
-    <div class="grid grid-sales">
-      <p>Sales breakdown</p>
-      <%= pie_chart @author.book_transactions.group(:title).count, width: "200px", height: "200px", donut: true, labels: false, legend: false %>
+      <div class="grid grid-sales">
+        <p>Sales breakdown</p>
+        <%= pie_chart @author.book_transactions.group(:title).count, width: "200px", height: "200px", donut: true, labels: false, legend: false %>
+      </div>
     </div>
+    <%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>
   </div>
-  <%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>
-</div>
-<% end %>
+  <% end %>
+
+
