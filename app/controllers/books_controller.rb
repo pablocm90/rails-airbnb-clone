@@ -68,6 +68,7 @@ class BooksController < ApplicationController
   def bought
     @book = Book.find(params[:id])
     @user = current_user
+    BookTransaction.create(book: @book, user: @user)
   end
 
   private

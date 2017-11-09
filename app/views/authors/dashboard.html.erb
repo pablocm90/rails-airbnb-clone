@@ -7,7 +7,7 @@
       <%= render 'author_avatar' %>
       <h2> <%= @author.user.username %> </h2>
       <hr>
-      <p>Books breakdown</p>
+      <p>Book genres breakdown</p>
       <div class="chart"><%= pie_chart @author.books.group(:genre).count, width: "200px", height: "200px", donut: true, labels: false, legend: false %>
       </div>
     </div>
@@ -19,7 +19,8 @@
     <div class="grid grid-reviews"></div>
 
     <div class="grid grid-sales">
-      <%= pie_chart @author.book_transactions.group(:title).count %>
+      <p>Sales breakdown</p>
+      <%= pie_chart @author.book_transactions.group(:title).count, width: "200px", height: "200px", donut: true, labels: false, legend: false %>
     </div>
   </div>
   <%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>
