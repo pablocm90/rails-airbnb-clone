@@ -1,0 +1,29 @@
+<div class="row">
+<div class="row__inner">
+  <%= @author.books.each do |book|%>
+
+      <div class="tile">
+        <div class="tile__media">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path book.cover_pic %>');">
+          <div class="card-category"> title: <%= book.title %></div>
+          <div class="card-description">
+            <h2> author: <%= book.author.user.username %></h2>
+            <p>genre: <%= book.genre %></p>
+          </div>
+          <div class="card-price">
+            <p><%= book.price %>€</p>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
+          <a class="card-link" href="#"></a>
+          <%= link_to "", book_path(book), class: 'card-link' %>
+
+        </div>
+      </div>
+        <div class="tile__details">
+          <div class="tile__title">
+          </div>
+        </div>
+      </div>
+  <% end %>
+   </div>
+ </div>

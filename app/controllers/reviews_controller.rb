@@ -22,6 +22,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def test
+    @book = set_book
+    @reviews = Review.all
+
+  end
+
 
   private
 
