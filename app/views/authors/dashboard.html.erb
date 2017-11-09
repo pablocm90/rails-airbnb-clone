@@ -7,7 +7,7 @@
       <h2> <%= @author.user.username %> </h2>
       <hr>
       <p><strong>Book genres breakdown</strong></p>
-      <div class="chart"><%= pie_chart @author.books.group(:genre).count, width: "200px", height: "200px", donut: true, labels: false, legend: false %>
+      <div class="chart"><%= pie_chart @author.books.group(:genre).count, width: "200px", height: "200px", donut: true, legend: false %>
       </div>
     </div>
     <div class="grid grid-books">
@@ -29,7 +29,7 @@
 
       <div class="grid grid-sales">
         <p><strong>Books sold</strong></p>
-        <%= pie_chart @author.book_transactions.group(:title).count, width: "150px", height: "150px", donut: true, labels: false, legend: false %>
+        <%= pie_chart @author.book_transactions.group(:title).count, width: "150px", height: "150px", legend: false %>
       </div>
     </div>
   </div>
