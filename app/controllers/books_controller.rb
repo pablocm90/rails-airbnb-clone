@@ -12,6 +12,7 @@ class BooksController < ApplicationController
 
   def show
     @review = Review.new
+    @author = @book.author
   end
 
   def search
