@@ -12,15 +12,11 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :synopsys, presence: true, length: { minimum: 60, maximum: 500 }
 
-  def author_username
-    author_username = book.author.user.username
-  end
-
   include AlgoliaSearch
 
   algoliasearch do
-    attribute :title, :genre, :publisher, :synopsys
-    searchableAttributes ['title', 'genre', 'synopsys', 'publisher']
+    attribute :title, :genre, :publisher, :synopsys, :author_name
+    searchableAttributes ['title', 'genre', 'synopsys', 'publisher', 'author_name']
     minWordSizefor1Typo 4
     minWordSizefor2Typos 8
     # To Do: custom ranking (customRanking ['desc(likes_count)'])

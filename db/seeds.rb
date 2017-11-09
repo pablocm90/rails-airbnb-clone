@@ -36,6 +36,7 @@ p "let's generate some random books by that author"
 
   params[:publisher] = Faker::Lovecraft.deity
   params[:author] = @user_author
+  params[:author_name] = @user_author.user.username
   params[:synopsys] = Faker::Lovecraft.paragraph(2)
   book = Book.new(params)
 

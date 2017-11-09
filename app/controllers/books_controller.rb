@@ -15,6 +15,8 @@ class BooksController < ApplicationController
   end
 
   def search
+    @books = Book.all
+    @books.reindex
     if params[:query].present?
       @books = Book.search(params[:query])
       sort_results(@books)
@@ -31,6 +33,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.author = current_author
+    @book.author_name = current_author.user.username
     if @book.save
       redirect_to book_path(@book)
     else
@@ -43,10 +46,11 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book.update(book_params)
+    @books = Book.all
     @book.author = current_author
-    if @book.save
+    if @book.update(book_params)
       redirect_to book_path(@book)
+      @books.reindex
     else
       render :new
     end
@@ -82,7 +86,7 @@ class BooksController < ApplicationController
 
 
   def book_params
-    params.require(:book).permit(:price, :title, :synopsys, :genre, :cover_pic, :cover_pic_cache, :publisher, :publication_year)
+    params.require(:book).permit(:price, :title, :synopsys, :genre, :cover_pic, :cover_pic_cache, :publisher, :publication_year, :author_name)
   end
 
 end
