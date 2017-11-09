@@ -18,7 +18,9 @@
     </div>
     <div class="grid grid-reviews"></div>
 
-    <div class="grid grid-sales"></div>
+    <div class="grid grid-sales">
+      <%= pie_chart @author.book_transactions.group(:title).count %>
+    </div>
   </div>
   <%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>
 </div>
