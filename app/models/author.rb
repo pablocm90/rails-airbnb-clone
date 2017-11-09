@@ -5,4 +5,5 @@ class Author < ApplicationRecord
   has_many :book_transactions, through: :books
   has_many :reviews, through: :books
   validates :currency, presence: true
+
 end
