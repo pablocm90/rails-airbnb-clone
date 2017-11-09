@@ -16,14 +16,23 @@ class Book < ApplicationRecord
     author_username = book.author.user.username
   end
 
+  include AlgoliaSearch
 
-def self.search(search)
-  books_title = where("title LIKE ?", "%#{search}%")
-  books_genre = where("genre LIKE ?", "%#{search}%")
-  books_synopsys = where("synopsys LIKE ?", "%#{search}%")
-  books_result = books_title + books_genre + books_synopsys
-  return books_result
-end
+  algoliasearch do
+    attribute :title, :genre, :publisher, :synopsys
+    searchableAttributes ['title', 'genre', 'synopsys', 'publisher']
+    minWordSizefor1Typo 4
+    minWordSizefor2Typos 8
+    # To Do: custom ranking (customRanking ['desc(likes_count)'])
+  end
+
+  # def self.search(search)
+  #   books_title = where("title LIKE ?", "%#{search}%")
+  #   books_genre = where("genre LIKE ?", "%#{search}%")
+  #   books_synopsys = where("synopsys LIKE ?", "%#{search}%")
+  #   books_result = books_title + books_genre + books_synopsys
+  #   return books_result
+  # end
 
 
 end

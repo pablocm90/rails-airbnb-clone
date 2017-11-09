@@ -11,7 +11,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    @search = params[:query]
     @review = Review.new
   end
 
@@ -74,7 +73,7 @@ class BooksController < ApplicationController
 
   def sort_results(data)
     @books = data
-    # data.sort_by { |hash| hash['publication_year'] }.reverse
+    # to do: sort by something (year, rating, whatevvah)
   end
 
   def set_book
