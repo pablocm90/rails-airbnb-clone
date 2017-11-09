@@ -3,12 +3,11 @@
     <h1>BOOKTER</h1>
     <p>Discover the world, one book at a time</p>
 
-  <div class="form">
+  <div class="form test">
     <form action="/books/search" method="get">
       <input type="text" name ="query" id="query" placeholder="Search for book title, genre or synopsys" class="search-bar" >
-      <a href="/books/search"><input type="button" name="commit" value="Search" class="btn search-btn"></a>
+      <%= link_to "Search", search_books_path, class: 'btn search-btn' %>
     </form>
-
   </div>
 </div>
 </div>

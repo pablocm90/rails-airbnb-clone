@@ -22,15 +22,37 @@
   margin-bottom: 30px;
 }
 
-.search-bar {
-  padding: 7px;
-  border: none;
-  border-radius: 4px;
-  color: black;
-  font-weight: lighter;
-  width: 600px;
-  margin-right: 2px;
+
+@media(min-width: 500px) {
+
+  .search-bar {
+    padding: 7px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    font-weight: lighter;
+    width: 350px;
+    margin-right: 2px;
+  }
 }
+
+@media(max-width: 500px) {
+
+  .search-bar {
+    padding: 7px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    font-weight: lighter;
+    // max-width:350px;
+    margin-right: 2px;
+  }
+}
+
+.test {
+  width:100%;
+}
+
 
 .search-btn {
   vertical-align: inherit;
@@ -39,6 +61,7 @@
   border-color: $red-accent;
   color: white;
   font-weight: lighter;
+  margin-top: 10px;
 }
 
 .search-btn:hover {

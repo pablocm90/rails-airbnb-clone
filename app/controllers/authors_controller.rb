@@ -13,7 +13,6 @@ class AuthorsController < ApplicationController
       current_user.is_author = true
       redirect_to dashboard_path
     else
-      raise
       render :new
     end
   end
