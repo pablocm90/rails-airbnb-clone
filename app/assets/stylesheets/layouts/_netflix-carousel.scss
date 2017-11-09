@@ -41,7 +41,7 @@ a:hover {
   text-decoration: underline;
 }
 .contain {
-  width: 80%;
+  width: 100%;
 }
 .row {
   overflow: scroll;
@@ -60,8 +60,8 @@ a:hover {
 .tile {
   position: relative;
   display: inline-block;
-  width: 250px;
-  height: 140.625px;
+  width: 400px;
+  height: 200px;
   margin-right: 10px;
   font-size: 20px;
   cursor: pointer;
@@ -118,9 +118,7 @@ a:hover {
   text-align: center;
   z-index: 2;
 }
-.tile:hover .tile__details {
-  opacity: 1;
-}
+
 .tile__title {
   position: absolute;
   bottom: 0;
@@ -137,6 +135,7 @@ a:hover {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
   opacity: 1;
+  z-index: 99;
 }
 .tile:hover ~ .tile {
   -webkit-transform: translate3d(125px, 0, 0);

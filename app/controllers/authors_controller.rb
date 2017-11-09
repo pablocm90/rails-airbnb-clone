@@ -22,7 +22,7 @@ class AuthorsController < ApplicationController
   end
 
   def dashboard
-    @reviews = @author.reviews
+
 
   end
 
