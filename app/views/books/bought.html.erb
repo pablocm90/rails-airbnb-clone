@@ -1,10 +1,14 @@
-<h2>Payment Was Succesful !</h2>
-
-<h3> Book: <%= @book.title %></h3>
-<h4> Amount: <%= @book.price %> €</h3>
-
-<%= link_to "Download your book", '#', class: "btn btn-danger"%>
-
-<h2><%= link_to "Back to Overview", root_path(@book) %></h2>
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-post">
+        <h2>Payment Was Succesful !</h2>
+        <h3> Book: <%= @book.title %></h3>
+        <h4> Amount: <%= @book.price %> €</h3>
+          <%= link_to "Download your book", '#', class: "btn btn-danger"%>
+          <h2><%= link_to "Back to Overview", root_path(@book), class: "btn btn-danger" %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
 
