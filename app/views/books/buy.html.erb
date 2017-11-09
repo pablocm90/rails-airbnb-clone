@@ -1,18 +1,24 @@
-<h2>Order Summary</h2>
-<p>Please take a moment to review your order</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-post">
+        <h2>Order Summary</h2>
+        <p>Please take a moment to review your order</p>
+        <h3>Items</h3>
+        <ul>
+          <li>Title: <%= @book.title %></li>
+          <li>Amount: <%= @book.price %> €</li>
+        </ul>
+        <h3> Select Payment Method </h3>
+        <ul>
+          <li><%= link_to "VISA / Mastercard", pay_book_path(@book), class: "btn btn-danger" %></li>
+          <li><%= link_to "Bancontact", pay_book_path(@book), class: "btn btn-danger" %></li>
+          <li><%= link_to "PayPal", pay_book_path(@book), class: "btn btn-danger" %></li>
+          <li><%= link_to "Bitcoin", pay_book_path(@book), class: "btn btn-danger" %></li>
+        </ul>
+        <h2><%= link_to "Back to Book", book_path(@book), class: "btn btn-danger" %></h2>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h3>Items</h3>
-  <ul>
-    <li>Title: <%= @book.title %></li>
-    <li>Amount: <%= @book.price %> €</li>
-  </ul>
-
-<h3> Select Payment Method </h3>
-  <ul>
-    <li><%= link_to "VISA / Mastercard", pay_book_path(@book) %></li>
-    <li><%= link_to "Bancontact", pay_book_path(@book) %></li>
-    <li><%= link_to "PayPal", pay_book_path(@book) %></li>
-    <li><%= link_to "Bitcoin", pay_book_path(@book) %></li>
-  </ul>
-
-<h2><%= link_to "Back to Book", book_path(@book) %></h2>
