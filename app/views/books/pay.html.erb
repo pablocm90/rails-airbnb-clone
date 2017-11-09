@@ -2,19 +2,17 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-post">
-        <h2>Payment Summary</h2>
-        <h3>Amount: <%= @book.price %> €</h3>
-        <h3> Billing Information </h3>
-        <ul>
-          <li>First Name: <%= @user.username %></li>
-          <li>Last Name: Van Roeyen</li>
-          <li>Card Number: 6703 4509 6788 4560 4</li>
-          <li>Experience date: 07/2021</li>
-          <li>Card Code: ***</li>
-        </ul>
-        <%= link_to "Add another Card", '#', class: "btn btn-danger"%>
-        <%= link_to "Confirm payment", bought_book_path(@book), class: "btn btn-danger"%>
-        <h2><%= link_to "Back to Order", buy_book_path(@book), class: "btn btn-danger" %></h2>
+        <h2>Payment summary</h2>
+        <h3>Amount</h3><p>€<%= @book.price %></p>
+        <h3>Billing information</h3>
+        <p><b>First name:</b> <%= @user.username %></p>
+        <p><b>Last name:</b> Van Roeyen</p>
+        <p><b>Card number:</b> 6703 4509 6788 4560 4</p>
+        <p><b>Expiration date:</b> 07/2021</p>
+        <p><b>Card code:</b> ***</p>
+        <h2>  <%= link_to "Add another card", '#', class: "btn btn-default"%>
+        <%= link_to "Confirm payment", bought_book_path(@book), class: "btn btn-default"%></h2>
+        <h2><%= link_to "Back to order", buy_book_path(@book), class: "btn btn-danger" %></h2>
       </div>
     </div>
   </div>
