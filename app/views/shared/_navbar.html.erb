@@ -22,10 +22,9 @@
       <div class="dropdown">
         <% if current_author %>
         <% current_author.profile_picture? ? avatar_url = current_author.profile_picture : avatar_url = "http://res.cloudinary.com/danbala/image/upload/v1510221593/images_z1miqg.png" %>
-        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= image_tag avatar_url, class: "avatar avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 
 
-        <img src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen" class="avatar avatar-small dropdown-toggle" id="navbar-book-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-book-dropdown-menu">
           <li><%= link_to "Profile", new_authors_path %></li>
           <li><a href="/dashboard">Dashboard</a></li>
