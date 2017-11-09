@@ -1,6 +1,30 @@
 <% if current_user != @author.user.username %>
 
-<%= @author.user.username %>
-<%= @author.description %>
+
+<div class="container margin-top-50 test">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="author-pic text-center jumbotron">
+        <%= cl_image_tag @author.profile_picture %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 ">
+      <div class="author-info text-center thumbnail"  style="margin-top: 15vh">
+        <p><b>Name:</b></p>
+        <p> <%= @author.user.username %> </p>
+        <p><b>Description:</b></p>
+        <p> <%= @author.description %> </p>
+        <p><b>Birthday:</b></p>
+        <p> <%= @author.birthday %> </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>
+
+
+
+
+
