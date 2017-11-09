@@ -15,9 +15,7 @@
           align-items: center;
   width: 100%;
 }
-* {
-  box-sizing: border-box;
-}
+
 h1,
 p {
   text-align: center;
@@ -60,7 +58,7 @@ a:hover {
 .tile {
   position: relative;
   display: inline-block;
-  width: 400px;
+  width: 300px;
   height: 200px;
   margin-left: 10px;
   font-size: 20px;
