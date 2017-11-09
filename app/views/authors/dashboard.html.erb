@@ -4,6 +4,8 @@
   <div class="grid grid-profile">
     <%= render 'author_avatar' %>
     <h2> <%= @author.user.username %> </h2>
+    <div class="chart"><%= pie_chart @author.books.all.group(:genre).count %>
+</div>
   </div>
   <div class="grid grid-books"></div>
   <div class="grid grid-prices"></div>
