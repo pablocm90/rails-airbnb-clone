@@ -17,11 +17,11 @@
     <div class="grid grid-prices">
       <div id="author-average">
         <p>Your average price</p>
-        <p><%= @author.books.average(:price) %></p>
+        <p><%= @author.books.average(:price).round(2) %></p>
       </div>
       <div id="all-average">
         <p>Overall average price</p>
-        <p><%= Book.all.average(:price) %></p>
+        <p><%= Book.all.average(:price).round(2) %></p>
       </div>
     </div>
     <div class="grid grid-reviews">
@@ -33,6 +33,8 @@
         <%= pie_chart @author.book_transactions.group(:title).count, width: "200px", height: "200px", donut: true, labels: false, legend: false %>
       </div>
     </div>
+  </div>
+  <div>
     <%= link_to "upload a new book", new_authors_book_path , class: "btn btn-danger" %>
   </div>
   <% end %>
