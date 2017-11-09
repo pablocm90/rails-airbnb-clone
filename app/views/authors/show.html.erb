@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-xs-12 col-sm-6 ">
-      <div class="author-info text-center thumbnail"  style="margin-top: 15vh">
+      <div class="author-info text-center thumbnail">
         <p><b>Name:</b></p>
         <p> <%= @author.user.username %> </p>
         <p><b>Description:</b></p>
@@ -18,6 +18,7 @@
         <p><b>Birthday:</b></p>
         <p> <%= @author.birthday %> </p>
       </div>
+      <%= render 'carousel_books' %>
     </div>
   </div>
 </div>
