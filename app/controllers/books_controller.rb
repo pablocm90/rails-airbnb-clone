@@ -5,17 +5,27 @@ class BooksController < ApplicationController
 
   def index
     @authors = Author.all
+    @author = @book.author
     @genres = ["mystery", "thriller", "erotic", "crime", "fantasy"]
     @books = Book.all
     sort_results
   end
 
   def show
-    @review = Review.new
     @author = @book.author
+    reviews = Review.where(book_id: @book.id)
+    sum = 0
+    i = 0
+    reviews.each do |review|
+      rating = review.rating
+      sum += rating
+      i += 1
+    end
+    @average_rating = (i == 0) ? "No reviews yet" : (sum / i)
   end
 
   def search
+    @author = @book.author
     @books = Book.all
     @books.reindex
     if params[:query].present?

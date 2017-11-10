@@ -1,0 +1,10 @@
+<h3>Reviews</h3>
+<ul>
+  <% @book.reviews.each do |review| %>
+    <li>
+      <p><%= review.rating %></p>
+      <p><%= review.content %></p>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add a review", new_book_review_path(@book), class: "btn btn-primary" %>

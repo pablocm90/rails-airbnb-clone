@@ -11,12 +11,13 @@
       </div>
     </div>
     <div class="grid grid-books">
+      <p><strong>Your books</strong></p>
       <%= render 'carousel_books' %>
     </div>
     <div class="grid grid-prices">
       <div id="author-average">
         <p><strong>Your average price</strong></p>
-        <p><%= @author.books.average(:price).round(2) %></p>
+        <p><%= @author.books.average(:price).round(2) unless @author.books.empty? %></p>
       </div>
       <div id="all-average">
         <p><strong>Overall average price</strong></p>

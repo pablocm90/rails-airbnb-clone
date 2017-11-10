@@ -8,12 +8,15 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "social-share-button";
 
 // Your CSS partials
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
 @import "authors/index";
+@import "books/index";
+@import "devise/index";
 
 
 body {

@@ -4,8 +4,12 @@
     <div class="col-xs-12 col-sm-6">
       <div class="card-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @book.cover_pic %>');">
 
-        <img class="showpage-user" src="https://kitt.lewagon.com/placeholder/users/lynnvanderhallen">
-        <%= link_to "author", author_path(@book.author), book: @book.id %>
+
+        <% @author.profile_picture? ? avatar_url = @author.profile_picture : avatar_url = "" %>
+        <%= image_tag avatar_url, class: "showpage-user avatar" %>
+        <%= link_to "author", authors_path(@book.author), book: @book.id %>
+
+
       </div>
     </div>
 
@@ -13,7 +17,8 @@
       <div class="card-big" style="background: white;">
         <div class="showpage-title"><%= @book.title %></div>
         <div class="showpage-author">
-          <p><%= @book.author_name %></p>
+          <%= link_to @book.author_name, authors_path(@book.author)%>
+
         </div>
 
         <div class="showpage-synopsis">
@@ -33,6 +38,10 @@
 
   </div>
 </div>
+
+<h3>Average rating: <%= @average_rating %></h3>
+<%= link_to "Reviews", book_reviews_path(@book), class: 'btn btn-primary' %>
+<%= social_share_button_tag("My Site") %>
 
 
 
