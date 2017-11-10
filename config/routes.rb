@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'dashboard', to: 'authors#dashboard'
 
-  resource :authors, only: [ :new, :create, :show ]
 
   resource :clients , except: [ :new, :create, :index ]
 
-  resource :authors, except: [ :new, :create, :show ] do
+  resource :authors, except: [ :new, :create ] do
     resources :books, except: [ :show ]
   end
+
+  resources :authors, only: [ :new, :create, :show ]
+
 
   resources :books, only: [ :show ] do
     resources :book_transactions, only: [ :create, :new, :update ]

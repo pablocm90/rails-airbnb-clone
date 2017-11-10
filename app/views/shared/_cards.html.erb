@@ -4,16 +4,16 @@
    <% @ordered_books.each do |book| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path book.cover_pic %>');">
-        <div class="card-category"> title: <%= book.title %></div>
+        <div class="card-category"><%= book.title %></div>
         <div class="card-description">
-          <h2> author: <%= book.author_name %></h2>
-          <p>genre: <%= book.genre %></p>
+          <h2><%= book.author_name %></h2>
+          <p><%= book.genre %></p>
         </div>
         <div class="card-price">
           <p><%= book.price %>€</p>
         </div>
         <% book.author.profile_picture? ? avatar_url = book.author.profile_picture : avatar_url = "" %>
-        <%= image_tag avatar_url, class: "card-user avatar" %>
+        <%= image_tag avatar_url, class: "card-user avatar-small" %>
         <%= link_to "", book_path(book), class: 'card-link' %>
       </div>
     </div>

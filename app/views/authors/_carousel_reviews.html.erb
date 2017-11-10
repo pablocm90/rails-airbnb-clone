@@ -5,9 +5,11 @@
     <div class="item active">
       <img src="..." alt="">
       <div class="carousel-caption">
-        <div> <%= @first_review.book.title %> </div>
+        <% unless @first_review.nil? %>
+        <div> <%= @first_review.book.title%> </div>
         <div> <%= @first_review.rating %> </div>
         <div> <%= @first_review.content %> </div>
+        <% end %>
       </div>
     </div>
     <% @rest.each do |review| %>

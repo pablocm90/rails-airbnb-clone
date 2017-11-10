@@ -6,7 +6,7 @@
 
 
         <% @author.profile_picture? ? avatar_url = @author.profile_picture : avatar_url = "" %>
-        <%= image_tag avatar_url, class: "showpage-user avatar" %>
+        <%= image_tag avatar_url, class: "showpage-user avatar-small" %>
 
 
 
@@ -17,16 +17,10 @@
       <div class="card-big" style="background: white;">
         <div class="showpage-title"><%= @book.title %></div>
         <div class="showpage-author">
-          <%= link_to @book.author_name, authors_path(@book.author)%>
+          <%= link_to @book.author_name, author_path(@book.author)%>
 
         </div>
-
-        <div class="showpage-synopsis">
-          <p>Synopsis:</p>
-          <p><%= @book.synopsys %></p>
-        </div>
-
-      <%= link_to book_reviews_path(@book), class: "review-link" do %>
+        <%= link_to book_reviews_path(@book), class: "review-link" do %>
         <div class="average-review text-center">
           <ul class="list-inline">
             <li>
@@ -35,24 +29,33 @@
                 <% 5.times do |counter|%>
                   <% if @average_rating <= counter %>
 
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o star" aria-hidden="true"></i>
 
                   <% else %>
-                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star star" aria-hidden="true"></i>
 
 
                   <% end %>
+
               <% end %>
             <% else %>
-                <p>No reviews yet</p>
+                <p class="rating-count-p" style = "padding: 0px;" > <%= @rating_count%> reviews</p>
             <% end %>
+
             </li>
               <li>
-            <p class="rating-count-p" style = "padding: 0px;" > <%= @rating_count%> </p>
+
 
           </ul>
         </div>
       <% end %>
+
+        <div class="showpage-synopsis">
+          <p>Synopsis:</p>
+          <p><%= @book.synopsys %></p>
+        </div>
+
+
         <div class="edit-book text-center showpage-button">
           <% if current_author == @book.author %>
           <%= link_to "Edit book", edit_authors_book_path, class: 'btn btn-danger' %>
@@ -67,8 +70,6 @@
 </div>
 
 
-<%= link_to "Reviews", book_reviews_path(@book), class: 'btn btn-primary' %>
-<%= social_share_button_tag(@book.title, :image => @book.cover_pic) %>
 
 
 
