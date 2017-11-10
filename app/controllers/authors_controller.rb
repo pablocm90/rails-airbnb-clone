@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-  before_action :set_author, only: [ :dashboard ]
+  before_action :set_author, only: [ :dashboard, :edit ]
 
 
   def new
@@ -18,14 +18,32 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def show
-    @author = Author.find(params[:id])
+    if params[:id]
+      @author = Author.find(params[:id])
+    else
+      @author = current_author
+    end
   end
 
   def dashboard
-
-
   end
+
+
+
+  def update
+    current_author.update(author_params)
+    if current_author.save!
+      redirect_to authors_path
+    else
+      render :edit
+    end
+  end
+
 
 
 
