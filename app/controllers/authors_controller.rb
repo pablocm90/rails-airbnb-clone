@@ -31,6 +31,8 @@ class AuthorsController < ApplicationController
   end
 
   def dashboard
+    @first_review = @author.reviews.first
+    @rest = @author.reviews.reject{ |review| review == @first_review}
   end
 
 

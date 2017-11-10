@@ -11,7 +11,6 @@
       </div>
     </div>
     <div class="grid grid-books">
-      <p><strong>Your books</strong></p>
       <%= render 'carousel_books' %>
     </div>
     <div class="grid grid-prices">
@@ -25,7 +24,7 @@
       </div>
     </div>
     <div class="grid grid-reviews">
-    <p>TODO The reviews will go here!</p>
+    <%= render 'carousel_reviews' %>
     </div>
 
       <div class="grid grid-sales">
@@ -34,7 +33,11 @@
       </div>
     </div>
   </div>
+
+  <div><p><%= @author.reviews.first.content %> <%= @author.reviews.count %></p></div>
   <% end %>
+
+
 
 
 
