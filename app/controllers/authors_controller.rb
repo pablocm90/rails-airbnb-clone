@@ -19,10 +19,15 @@ class AuthorsController < ApplicationController
   end
 
   def edit
+
   end
 
   def show
+    if params[:id]
       @author = Author.find(params[:id])
+    else
+      @author = current_author
+    end
   end
 
   def dashboard
@@ -31,6 +36,12 @@ class AuthorsController < ApplicationController
 
 
   def update
+    current_author.update(author_params)
+    if current_author.save!
+      redirect_to authors_path
+    else
+      render :edit
+    end
   end
 
 
