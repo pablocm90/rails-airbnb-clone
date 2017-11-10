@@ -8,21 +8,15 @@ class BooksController < ApplicationController
     @author = @book.author
     @genres = ["mystery", "thriller", "erotic", "crime", "fantasy"]
     @books = Book.all
-    sort_results
+
   end
+
+
 
   def show
     @author = @book.author
-    reviews = Review.where(book_id: @book.id)
-    sum = 0
-    i = 0
-    reviews.each do |review|
-      rating = review.rating
-      sum += rating
-      i += 1
-    end
-    @rating_count = i
-    @average_rating = (i == 0) ? "No reviews yet" : (sum / i)
+    average_rating(@book)
+    @rating_count = @book.reviews.count
   end
 
   def search
@@ -30,10 +24,10 @@ class BooksController < ApplicationController
     @books.reindex
     if params[:query].present?
       @books = Book.search(params[:query])
-      sort_results(@books)
     else
       @books = Book.all
     end
+    sort_results(@books)
   end
 
   def new
@@ -88,8 +82,8 @@ class BooksController < ApplicationController
   private
 
   def sort_results(data)
-    @books = data
-    # to do: sort by something (year, rating, whatevvah)
+    @ordered_books = data.sort_by { |book| average_rating(book) }
+    @ordered_books.reverse!
   end
 
   def set_book
@@ -99,6 +93,10 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:price, :title, :synopsys, :genre, :cover_pic, :cover_pic_cache, :publisher, :publication_year, :author_name)
+  end
+
+  def average_rating(book)
+    book.reviews.count != 0 ? @average_rating = book.reviews.average(:rating).round(0) : @average_rating = 0
   end
 
 end
