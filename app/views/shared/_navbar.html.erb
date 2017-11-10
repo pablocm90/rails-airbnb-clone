@@ -15,7 +15,7 @@
     <% if current_author %>
     <%= link_to "Add a book", new_authors_book_path, class: 'navbar-book-item navbar-book-link' %>
     <% else %>
-    <%= link_to "Become an author", new_authors_path, class: 'navbar-book-item navbar-book-link' %>
+    <%= link_to "Become an author", new_author_path, class: 'navbar-book-item navbar-book-link' %>
     <% end %>
 
     <div class="navbar-book-item">
@@ -66,7 +66,7 @@
 
           <% elsif current_user %>
 
-          <li> <%= link_to "Become an author", new_authors_path, class: 'navbar-book-item navbar-book-link' %></li>
+          <li> <%= link_to "Become an author", new_author_path, class: 'navbar-book-item navbar-book-link' %></li>
 
           <li><a href='/clients'>Profile</a></li>
           <li><a href="#">Dashboard</a></li>
