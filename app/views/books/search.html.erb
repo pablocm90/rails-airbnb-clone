@@ -15,7 +15,7 @@
         <div class="card-price">
           <p><%= book.price %>€</p>
         </div>
-        <% @author.profile_picture? ? avatar_url = @author.profile_picture : avatar_url = "" %>
+        <% book.author.profile_picture? ? avatar_url = book.author.profile_picture : avatar_url = "" %>
         <%= image_tag avatar_url, class: "card-user avatar" %>
         <a class="card-link" href="#"></a>
         <%= link_to "", book_path(book), class: 'card-link' %>

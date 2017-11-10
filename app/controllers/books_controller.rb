@@ -25,7 +25,6 @@ class BooksController < ApplicationController
   end
 
   def search
-    @author = @book.author
     @books = Book.all
     @books.reindex
     if params[:query].present?
