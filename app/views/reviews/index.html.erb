@@ -7,7 +7,18 @@
         <div class= "review-box">
          <!--  <%= image_tag review.user.client.profile_picture %> -->
           <p id="username"> <%= review.user.username %> </p>
-          <p><%= review.rating %></p>
+          <div class="average-review">
+            <% 5.times do |counter|%>
+              <% if review.rating <= counter %>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+              <% else %>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              <% end %>
+            <% end %>
+          </div>
+
+
+
           <p id="content-box"><%= review.content %></p>
         </div>
         <% end %>
