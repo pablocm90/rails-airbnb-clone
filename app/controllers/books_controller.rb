@@ -20,6 +20,7 @@ class BooksController < ApplicationController
       sum += rating
       i += 1
     end
+    @rating_count = i
     @average_rating = (i == 0) ? "No reviews yet" : (sum / i)
   end
 

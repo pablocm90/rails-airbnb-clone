@@ -2,7 +2,7 @@
   height: 450px;
   background-size: cover !important;
   background-position: center;
-  color: white;
+  color: #999999;
   position: relative;
   border-radius: 2px;
   font-family: 'Roboto', sans-serif;
@@ -21,44 +21,66 @@
   min-width:auto;
 }
 
-  .showpage-title {
-    position: relative;
-    font-size: 35px;
-    color: #999999;
-    text-align: center;
-    width: 100%;
-    font-family: 'Special Elite', cursive;
-    text-transform: capitalize;
+.showpage-title {
+  padding-top:10px;
+  position: relative;
+  font-size: 35px;
+  color: #999999;
+  text-align: center;
+  width: 100%;
+  font-family: 'Special Elite', cursive;
+  text-transform: capitalize;
 
-  }
+}
 
-  .showpage-author{
-    position: relative;
-    font-size: 15px;
-    color: #999999;
-    width: 100%;
-    text-align: center;
+.showpage-author{
+  position: relative;
+  font-size: 15px;
+  color: #999999;
+  width: 100%;
+  text-align: center;
 
-  }
+}
 
-  .showpage-author {
-    margin:0;
-  }
+.average-review {
+  padding-top: 10px;
+  color: #ffd700;
+  transform: scale(1);
+  transition: all 0.3s ease;
 
-  .showpage-author-description{
-    position: relative;
-    font-size: 15px;
-    color: #999999;
+}
 
-  }
+.review-link {
+  text-decoration:none !important;
+}
+
+.average-review:hover {
+  transform: scale(1.2);
+}
+
+.rating-count {
+  color: #999999;
+}
+
+
+.showpage-author {
+  margin:0;
+}
+
+.showpage-author-description{
+  position: relative;
+  font-size: 15px;
+  color: #999999;
+
+}
 
 .showpage-user {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 70px;
-    border-radius: 50%;
-    background-size: cover;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 70px;
+  border-radius: 50%;
+  background-size: cover;
 }
 
 .showpage-button {
