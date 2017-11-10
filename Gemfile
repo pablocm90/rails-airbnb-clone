@@ -17,6 +17,9 @@ gem 'webpacker', '~> 3.0'
 
 gem 'algoliasearch-rails'
 
+gem 'social-share-button', '~> 0.1.6'
+
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
