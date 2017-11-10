@@ -15,7 +15,7 @@ password = "qwerty"
 emails = ["linnette@user", "green-dinosaur@user", "dutchness@user", "spaniard@user"]
 usernames = ["Linnette", "Green-dinosaur", "Dutchness", "Spaniard"]
 genres = ["fantasy", "crime", "historical-fiction", "science-fiction", "horror", "non-fiction"]
-book_url = ["https://images.pexels.com/photos/8578/pexels-photo.jpg", "https://images.pexels.com/photos/458429/pexels-photo-458429.jpeg", "https://images.pexels.com/photos/237180/pexels-photo-237180.jpeg", "https://images.pexels.com/photos/39628/woman-gothic-dark-horror-39628.jpeg"]
+book_url = ["https://images.pexels.com/photos/8578/pexels-photo.jpg?h=350&auto=compress&cs=tinysrg", "https://images.pexels.com/photos/458429/pexels-photo-458429.jpeg?h=350&auto=compress&cs=tinysrg", "https://images.pexels.com/photos/237180/pexels-photo-237180.jpeg?h=350&auto=compress&cs=tinysrg", "https://images.pexels.com/photos/39628/woman-gothic-dark-horror-39628.jpeg?h=350&auto=compress&cs=tinysrg"]
 
 p "creating users - 2 of them are authors, all of them are clients"
 
