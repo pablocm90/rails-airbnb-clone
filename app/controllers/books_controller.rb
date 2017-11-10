@@ -13,16 +13,14 @@ class BooksController < ApplicationController
   def show
     @author = @book.author
     reviews = Review.where(book_id: @book.id)
-    unless reviews = []
-      sum = 0
-      i = 0
-      reviews.each do |review|
-        rating = review.rating
-        sum += rating
-        i += 1
-      end
-      @average_rating = sum / i
+    sum = 0
+    i = 0
+    reviews.each do |review|
+      rating = review.rating
+      sum += rating
+      i += 1
     end
+    @average_rating = (i == 0) ? "No reviews yet" : (sum / i)
   end
 
   def search
