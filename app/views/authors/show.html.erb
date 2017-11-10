@@ -24,9 +24,11 @@
       <%= render 'carousel_books' %>
     </div>
   </div>
+  <% if @author == current_author %>
+  <%= link_to "edit profile", edit_authors_path, class: "btn btn-danger" %>
+<% end %>
 </div>
 
-<%= link_to "edit profile", edit_authors_path, class: "btn btn-danger" %>
 
 <% end %>
 
