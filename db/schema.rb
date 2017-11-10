@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20171109135512) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "username"
-    t.boolean  "is_author",              default: false
+    t.boolean  "author",                 default: false
     t.boolean  "admin",                  default: false
     t.boolean  "active",                 default: true
     t.datetime "created_at",                             null: false
