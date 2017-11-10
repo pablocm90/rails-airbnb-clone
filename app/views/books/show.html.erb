@@ -41,7 +41,7 @@
 
 <h3>Average rating: <%= @average_rating %></h3>
 <%= link_to "Reviews", book_reviews_path(@book), class: 'btn btn-primary' %>
-<%= social_share_button_tag("My Site") %>
+<%= social_share_button_tag(@book.title) %>
 
 
 
