@@ -12,7 +12,7 @@ class Book < ApplicationRecord
   validates :cover_pic, presence: true
   validates :publisher, presence: true
   validates :author, presence: true
-  validates :synopsys, presence: true, length: { minimum: 60, maximum: 500 }
+  validates :synopsys, presence: true
 
   include AlgoliaSearch
 
