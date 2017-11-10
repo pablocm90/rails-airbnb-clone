@@ -1,0 +1,10 @@
+<%= simple_form_for @author, url: authors_path, defaults: { input_html: { class: 'default_class' } } do |f| %>
+<%= f.input :profile_picture, placeholder: @author.profile_picture %>
+<%= f.input :profile_picture_cache, as: :hidden %>
+<%= f.input :description, placeholder: @author.description %>
+<%= f.input :currency, placeholder: @author.currency %>
+<%= f.input :birthday, placeholder: @author.birthday, as: :date, start_year: Date.today.year - 90,
+end_year: Date.today.year - 12,
+order: [:day, :month, :year] %>
+<%= f.button :submit, class:"btn btn-danger" %>
+<% end %>
