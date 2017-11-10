@@ -60,13 +60,13 @@ end
 
 p "creating bok transactions"
 
-40.times do
+400.times do
   BookTransaction.create(user_id: User.all.sample, book_id: Book.all.sample)
 end
 
 p "creating reviews"
 
-100.times do
+80.times do
   params = {}
   params[:user] = User.all.sample
   params[:book] = Book.all.sample
