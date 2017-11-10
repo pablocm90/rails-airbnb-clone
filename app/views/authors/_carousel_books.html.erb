@@ -5,10 +5,10 @@
       <div class="tile">
         <div class="tile__media">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path book.cover_pic %>');">
-          <div class="card-category"> title: <%= book.title %></div>
+          <div class="card-category"><%= book.title %></div>
           <div class="card-description">
-            <h2> author: <%= book.author.user.username %></h2>
-            <p>genre: <%= book.genre %></p>
+            <h2><%= book.author.user.username %></h2>
+            <p><%= book.genre %></p>
           </div>
           <div class="card-price">
             <p><%= book.price %>€</p>
