@@ -61,7 +61,7 @@ end
 p "creating bok transactions"
 
 400.times do
-  BookTransaction.create(user_id: User.all.sample, book_id: Book.all.sample)
+  BookTransaction.create(user: User.all.sample, book: Book.all.sample)
 end
 
 p "creating reviews"
