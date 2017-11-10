@@ -1,10 +1,18 @@
-<h3>Reviews</h3>
-<ul>
-  <% @book.reviews.each do |review| %>
-    <li>
-      <p><%= review.rating %></p>
-      <p><%= review.content %></p>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Add a review", new_book_review_path(@book), class: "btn btn-primary" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-post">
+        <h3>Reviews</h3>
+        <% @book.reviews.each do |review| %>
+        <div class= "review-box">
+         <!--  <%= image_tag review.user.client.profile_picture %> -->
+          <p id="username"> <%= review.user.username %> </p>
+          <p><%= review.rating %></p>
+          <p id="content-box"><%= review.content %></p>
+        </div>
+        <% end %>
+        <%= link_to "Add a review", new_book_review_path(@book), class: "btn btn-danger", id: "btn-white" %>
+      </div>
+    </div>
+  </div>
+</div>
