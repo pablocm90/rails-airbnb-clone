@@ -24,7 +24,8 @@
         <div class="average-review text-center">
           <ul class="list-inline">
             <li>
-              <% if !@average_rating.is_a?(String) %>
+
+              <% unless @average_rating == 0 %>
 
                 <% 5.times do |counter|%>
                   <% if @average_rating <= counter %>
@@ -34,16 +35,14 @@
                   <% else %>
                    <i class="fa fa-star star" aria-hidden="true"></i>
 
-
-                  <% end %>
-
+                 <% end %>
               <% end %>
-            <% else %>
-                <p class="rating-count-p" style = "padding: 0px;" > <%= @rating_count%> reviews</p>
             <% end %>
-
             </li>
               <li>
+                <p class="rating-count-p" style = "padding: 0px;" > <%= @rating_count%> reviews</p>
+              </li>
+
 
 
           </ul>
